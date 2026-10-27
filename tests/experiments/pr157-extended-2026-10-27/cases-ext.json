@@ -1,0 +1,2422 @@
+[
+ {
+  "id": "flexible_rows.casual_c",
+  "concept": "flexible_rows",
+  "chapter": 2,
+  "kind": "casual_c",
+  "question": "If I change how many things I want to store in a row, does the program code need to be rewritten?",
+  "goldGroups": [
+   [
+    "ch02.013",
+    "ch02.015"
+   ],
+   [
+    "ch02.014",
+    "ch02.010"
+   ]
+  ],
+  "answerCriteria": [
+   "Runtime collection of fields permits a variable number of columns.",
+   "Fields support different value types; changing a table no longer requires recompiling the Tuple definition."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "flexible_rows.casual_d",
+  "concept": "flexible_rows",
+  "chapter": 2,
+  "kind": "casual_d",
+  "question": "What happens to how fast the program runs when I start using this new way of storing data?",
+  "goldGroups": [
+   [
+    "ch02.013",
+    "ch02.015"
+   ],
+   [
+    "ch02.014",
+    "ch02.010"
+   ]
+  ],
+  "answerCriteria": [
+   "Runtime collection of fields permits a variable number of columns.",
+   "Fields support different value types; changing a table no longer requires recompiling the Tuple definition."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "flexible_rows.casual_e",
+  "concept": "flexible_rows",
+  "chapter": 2,
+  "kind": "casual_e",
+  "question": "How can this new system let me mix different kinds of information—like text, numbers, and dates—in the same row?",
+  "goldGroups": [
+   [
+    "ch02.013",
+    "ch02.015"
+   ],
+   [
+    "ch02.014",
+    "ch02.010"
+   ]
+  ],
+  "answerCriteria": [
+   "Runtime collection of fields permits a variable number of columns.",
+   "Fields support different value types; changing a table no longer requires recompiling the Tuple definition."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "flexible_rows.casual_f",
+  "concept": "flexible_rows",
+  "chapter": 2,
+  "kind": "casual_f",
+  "question": "If the structure of my data isn't set when I write the code, how does the computer know what each piece of stored information is?",
+  "goldGroups": [
+   [
+    "ch02.013",
+    "ch02.015"
+   ],
+   [
+    "ch02.014",
+    "ch02.010"
+   ]
+  ],
+  "answerCriteria": [
+   "Runtime collection of fields permits a variable number of columns.",
+   "Fields support different value types; changing a table no longer requires recompiling the Tuple definition."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "flexible_rows.casual_g",
+  "concept": "flexible_rows",
+  "chapter": 2,
+  "kind": "casual_g",
+  "question": "Why does using this method make the data spread out in memory, and is that a problem?",
+  "goldGroups": [
+   [
+    "ch02.013",
+    "ch02.015"
+   ],
+   [
+    "ch02.014",
+    "ch02.010"
+   ]
+  ],
+  "answerCriteria": [
+   "Runtime collection of fields permits a variable number of columns.",
+   "Fields support different value types; changing a table no longer requires recompiling the Tuple definition."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "tagged_values.casual_c",
+  "concept": "tagged_values",
+  "chapter": 2,
+  "kind": "casual_c",
+  "question": "If a piece of data is stored, what tells the computer if it should treat those bytes as a whole number or as some letters?",
+  "goldGroups": [
+   [
+    "ch02.026",
+    "ch02.029"
+   ],
+   [
+    "ch02.028",
+    "ch02.029"
+   ]
+  ],
+  "answerCriteria": [
+   "A type tag tells the engine how to interpret the bytes.",
+   "A byte length identifies the size, particularly for variable-length strings."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "tagged_values.casual_d",
+  "concept": "tagged_values",
+  "chapter": 2,
+  "kind": "casual_d",
+  "question": "If I only see a bunch of random bytes, what separate pieces of information need to travel with them so the computer knows what they are supposed to be?",
+  "goldGroups": [
+   [
+    "ch02.026",
+    "ch02.029"
+   ],
+   [
+    "ch02.028",
+    "ch02.029"
+   ]
+  ],
+  "answerCriteria": [
+   "A type tag tells the engine how to interpret the bytes.",
+   "A byte length identifies the size, particularly for variable-length strings."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "tagged_values.casual_e",
+  "concept": "tagged_values",
+  "chapter": 2,
+  "kind": "casual_e",
+  "question": "Why does the system need to know how long the data is, especially if it's text that could be short or very long?",
+  "goldGroups": [
+   [
+    "ch02.026",
+    "ch02.029"
+   ],
+   [
+    "ch02.028",
+    "ch02.029"
+   ]
+  ],
+  "answerCriteria": [
+   "A type tag tells the engine how to interpret the bytes.",
+   "A byte length identifies the size, particularly for variable-length strings."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "tagged_values.casual_f",
+  "concept": "tagged_values",
+  "chapter": 2,
+  "kind": "casual_f",
+  "question": "When looking at a stored piece of information, what parts are needed besides the actual stuff to make sure the computer understands it?",
+  "goldGroups": [
+   [
+    "ch02.026",
+    "ch02.029"
+   ],
+   [
+    "ch02.028",
+    "ch02.029"
+   ]
+  ],
+  "answerCriteria": [
+   "A type tag tells the engine how to interpret the bytes.",
+   "A byte length identifies the size, particularly for variable-length strings."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "tagged_values.casual_g",
+  "concept": "tagged_values",
+  "chapter": 2,
+  "kind": "casual_g",
+  "question": "If the data is text, what part of the storage description tells the computer exactly where the text ends?",
+  "goldGroups": [
+   [
+    "ch02.026",
+    "ch02.029"
+   ],
+   [
+    "ch02.028",
+    "ch02.029"
+   ]
+  ],
+  "answerCriteria": [
+   "A type tag tells the engine how to interpret the bytes.",
+   "A byte length identifies the size, particularly for variable-length strings."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_io.casual_c",
+  "concept": "page_io",
+  "chapter": 2,
+  "kind": "casual_c",
+  "question": "If I just want to see one piece of information, why does it seem like the computer has to bring in a whole chunk of surrounding information too?",
+  "goldGroups": [
+   [
+    "ch02.055",
+    "ch02.057"
+   ]
+  ],
+  "answerCriteria": [
+   "Disk access has substantial fixed latency and hardware/OS transfer blocks.",
+   "A page amortizes that cost across nearby records and can serve later accesses from memory."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_io.casual_d",
+  "concept": "page_io",
+  "chapter": 2,
+  "kind": "casual_d",
+  "question": "When the database reads something, does it pull the whole page, or just the single thing I asked for?",
+  "goldGroups": [
+   [
+    "ch02.055",
+    "ch02.057"
+   ]
+  ],
+  "answerCriteria": [
+   "Disk access has substantial fixed latency and hardware/OS transfer blocks.",
+   "A page amortizes that cost across nearby records and can serve later accesses from memory."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_io.casual_e",
+  "concept": "page_io",
+  "chapter": 2,
+  "kind": "casual_e",
+  "question": "If I keep asking for the next bit of data right after, why is it so fast after the first time?",
+  "goldGroups": [
+   [
+    "ch02.055",
+    "ch02.057"
+   ]
+  ],
+  "answerCriteria": [
+   "Disk access has substantial fixed latency and hardware/OS transfer blocks.",
+   "A page amortizes that cost across nearby records and can serve later accesses from memory."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_io.casual_f",
+  "concept": "page_io",
+  "chapter": 2,
+  "kind": "casual_f",
+  "question": "What is this 'page' thing, and why is the database built around moving these whole pages around?",
+  "goldGroups": [
+   [
+    "ch02.055",
+    "ch02.057"
+   ]
+  ],
+  "answerCriteria": [
+   "Disk access has substantial fixed latency and hardware/OS transfer blocks.",
+   "A page amortizes that cost across nearby records and can serve later accesses from memory."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_io.casual_g",
+  "concept": "page_io",
+  "chapter": 2,
+  "kind": "casual_g",
+  "question": "When the database changes some information, does it wait until later to write the whole modified group back to the disk?",
+  "goldGroups": [
+   [
+    "ch02.055",
+    "ch02.057"
+   ]
+  ],
+  "answerCriteria": [
+   "Disk access has substantial fixed latency and hardware/OS transfer blocks.",
+   "A page amortizes that cost across nearby records and can serve later accesses from memory."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_capacity.casual_c",
+  "concept": "page_capacity",
+  "chapter": 2,
+  "kind": "casual_c",
+  "question": "When data is put on a page, what takes up space that we can't actually use for the real data?",
+  "goldGroups": [
+   [
+    "ch02.066",
+    "ch02.070"
+   ]
+  ],
+  "answerCriteria": [
+   "Page and/or tuple metadata consume space unavailable to record payload.",
+   "Only complete records fit, so a leftover fragment smaller than a record is unusable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_capacity.casual_d",
+  "concept": "page_capacity",
+  "chapter": 2,
+  "kind": "casual_d",
+  "question": "If a page has some empty room left over, but it's not big enough for another whole piece of information, what happens to that leftover space?",
+  "goldGroups": [
+   [
+    "ch02.066",
+    "ch02.070"
+   ]
+  ],
+  "answerCriteria": [
+   "Page and/or tuple metadata consume space unavailable to record payload.",
+   "Only complete records fit, so a leftover fragment smaller than a record is unusable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_capacity.casual_e",
+  "concept": "page_capacity",
+  "chapter": 2,
+  "kind": "casual_e",
+  "question": "Besides the space needed for the actual rows of information, what extra space do we have to account for just to keep track of the page itself?",
+  "goldGroups": [
+   [
+    "ch02.066",
+    "ch02.070"
+   ]
+  ],
+  "answerCriteria": [
+   "Page and/or tuple metadata consume space unavailable to record payload.",
+   "Only complete records fit, so a leftover fragment smaller than a record is unusable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_capacity.casual_f",
+  "concept": "page_capacity",
+  "chapter": 2,
+  "kind": "casual_f",
+  "question": "If the beginning of the page is set aside for tracking information, how does that change how many records can actually fit?",
+  "goldGroups": [
+   [
+    "ch02.066",
+    "ch02.070"
+   ]
+  ],
+  "answerCriteria": [
+   "Page and/or tuple metadata consume space unavailable to record payload.",
+   "Only complete records fit, so a leftover fragment smaller than a record is unusable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "page_capacity.casual_g",
+  "concept": "page_capacity",
+  "chapter": 2,
+  "kind": "casual_g",
+  "question": "What is the difference between the total space on a page and the space that can actually hold new records?",
+  "goldGroups": [
+   [
+    "ch02.066",
+    "ch02.070"
+   ]
+  ],
+  "answerCriteria": [
+   "Page and/or tuple metadata consume space unavailable to record payload.",
+   "Only complete records fit, so a leftover fragment smaller than a record is unusable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "text_storage.casual_c",
+  "concept": "text_storage",
+  "chapter": 2,
+  "kind": "casual_c",
+  "question": "If the database saves things as plain text, how much bigger does a number like '123456789' take up compared to how it would look if it was saved in machine language?",
+  "goldGroups": [
+   [
+    "ch02.086",
+    "ch02.118"
+   ]
+  ],
+  "answerCriteria": [
+   "Readable text is simple to inspect/debug and useful for teaching.",
+   "Formatting/parsing costs CPU and text can require more space; it is not uniformly more compact than binary."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "text_storage.casual_d",
+  "concept": "text_storage",
+  "chapter": 2,
+  "kind": "casual_d",
+  "question": "When the app saves the data, does the file format tell you how many different pieces of information are in the whole record?",
+  "goldGroups": [
+   [
+    "ch02.086",
+    "ch02.118"
+   ]
+  ],
+  "answerCriteria": [
+   "Readable text is simple to inspect/debug and useful for teaching.",
+   "Formatting/parsing costs CPU and text can require more space; it is not uniformly more compact than binary."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "text_storage.casual_e",
+  "concept": "text_storage",
+  "chapter": 2,
+  "kind": "casual_e",
+  "question": "If the app saves everything as text, what is the trade-off for being able to open and look at the file with a basic text viewer?",
+  "goldGroups": [
+   [
+    "ch02.086",
+    "ch02.118"
+   ]
+  ],
+  "answerCriteria": [
+   "Readable text is simple to inspect/debug and useful for teaching.",
+   "Formatting/parsing costs CPU and text can require more space; it is not uniformly more compact than binary."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "text_storage.casual_f",
+  "concept": "text_storage",
+  "chapter": 2,
+  "kind": "casual_f",
+  "question": "If the app switched to saving things in a fixed, machine-readable way instead of text, how would it record the count of records at the start of the file?",
+  "goldGroups": [
+   [
+    "ch02.086",
+    "ch02.118"
+   ]
+  ],
+  "answerCriteria": [
+   "Readable text is simple to inspect/debug and useful for teaching.",
+   "Formatting/parsing costs CPU and text can require more space; it is not uniformly more compact than binary."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "text_storage.casual_g",
+  "concept": "text_storage",
+  "chapter": 2,
+  "kind": "casual_g",
+  "question": "If the app saves a piece of text, does it have to write down how long that piece of text is before the actual letters?",
+  "goldGroups": [
+   [
+    "ch02.086",
+    "ch02.118"
+   ]
+  ],
+  "answerCriteria": [
+   "Readable text is simple to inspect/debug and useful for teaching.",
+   "Formatting/parsing costs CPU and text can require more space; it is not uniformly more compact than binary."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "physical_independence.casual_c",
+  "concept": "physical_independence",
+  "chapter": 2,
+  "kind": "casual_c",
+  "question": "If the way the data is actually saved changes, what part of the program does *not* need to be touched?",
+  "goldGroups": [
+   [
+    "ch02.120"
+   ]
+  ],
+  "answerCriteria": [
+   "Storage serialization/deserialization changes behind a stable interface.",
+   "Applications continue using the same logical Page/Tuple/Field objects."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "physical_independence.casual_d",
+  "concept": "physical_independence",
+  "chapter": 2,
+  "kind": "casual_d",
+  "question": "What does it mean that the program looking for the biggest student ID doesn't care where the data came from?",
+  "goldGroups": [
+   [
+    "ch02.120"
+   ]
+  ],
+  "answerCriteria": [
+   "Storage serialization/deserialization changes behind a stable interface.",
+   "Applications continue using the same logical Page/Tuple/Field objects."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "physical_independence.casual_e",
+  "concept": "physical_independence",
+  "chapter": 2,
+  "kind": "casual_e",
+  "question": "If I change the file type, why won't the program that reads the list of students stop working?",
+  "goldGroups": [
+   [
+    "ch02.120"
+   ]
+  ],
+  "answerCriteria": [
+   "Storage serialization/deserialization changes behind a stable interface.",
+   "Applications continue using the same logical Page/Tuple/Field objects."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "physical_independence.casual_f",
+  "concept": "physical_independence",
+  "chapter": 2,
+  "kind": "casual_f",
+  "question": "What does the 'Page' thing do to keep the rest of the program from breaking when we change how data is stored?",
+  "goldGroups": [
+   [
+    "ch02.120"
+   ]
+  ],
+  "answerCriteria": [
+   "Storage serialization/deserialization changes behind a stable interface.",
+   "Applications continue using the same logical Page/Tuple/Field objects."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "physical_independence.casual_g",
+  "concept": "physical_independence",
+  "chapter": 2,
+  "kind": "casual_g",
+  "question": "If the program only deals with 'Tuple' and 'Field' things, what does that mean for how it sees the data?",
+  "goldGroups": [
+   [
+    "ch02.120"
+   ]
+  ],
+  "answerCriteria": [
+   "Storage serialization/deserialization changes behind a stable interface.",
+   "Applications continue using the same logical Page/Tuple/Field objects."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "deleted_hash_slot.casual_c",
+  "concept": "deleted_hash_slot",
+  "chapter": 8,
+  "kind": "casual_c",
+  "question": "If I erase a piece of information, why can't I just treat that space as if it was never used before when looking for something else?",
+  "goldGroups": [
+   [
+    "ch08.037",
+    "ch08.036"
+   ],
+   [
+    "ch08.038",
+    "ch08.040"
+   ]
+  ],
+  "answerCriteria": [
+   "An empty slot terminates lookup and can break the probe chain to a later colliding key.",
+   "A tombstone makes lookup continue while allowing insertion to reuse the slot."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "deleted_hash_slot.casual_d",
+  "concept": "deleted_hash_slot",
+  "chapter": 8,
+  "kind": "casual_d",
+  "question": "When I look up something, and I find an old, empty-looking spot where something used to be, why do I still have to check the next spot over?",
+  "goldGroups": [
+   [
+    "ch08.037",
+    "ch08.036"
+   ],
+   [
+    "ch08.038",
+    "ch08.040"
+   ]
+  ],
+  "answerCriteria": [
+   "An empty slot terminates lookup and can break the probe chain to a later colliding key.",
+   "A tombstone makes lookup continue while allowing insertion to reuse the slot."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "deleted_hash_slot.casual_e",
+  "concept": "deleted_hash_slot",
+  "chapter": 8,
+  "kind": "casual_e",
+  "question": "What's the difference between a spot that has never held anything, and a spot that used to hold something but now only has a special 'deleted' marker?",
+  "goldGroups": [
+   [
+    "ch08.037",
+    "ch08.036"
+   ],
+   [
+    "ch08.038",
+    "ch08.040"
+   ]
+  ],
+  "answerCriteria": [
+   "An empty slot terminates lookup and can break the probe chain to a later colliding key.",
+   "A tombstone makes lookup continue while allowing insertion to reuse the slot."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "deleted_hash_slot.casual_f",
+  "concept": "deleted_hash_slot",
+  "chapter": 8,
+  "kind": "casual_f",
+  "question": "If I keep deleting and adding things, why does the whole system start slowing down even if there isn't much new stuff in it?",
+  "goldGroups": [
+   [
+    "ch08.037",
+    "ch08.036"
+   ],
+   [
+    "ch08.038",
+    "ch08.040"
+   ]
+  ],
+  "answerCriteria": [
+   "An empty slot terminates lookup and can break the probe chain to a later colliding key.",
+   "A tombstone makes lookup continue while allowing insertion to reuse the slot."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "deleted_hash_slot.casual_g",
+  "concept": "deleted_hash_slot",
+  "chapter": 8,
+  "kind": "casual_g",
+  "question": "If I just clear out all the 'deleted' markers, what problem might that cause for finding things that were placed far away from where they should be?",
+  "goldGroups": [
+   [
+    "ch08.037",
+    "ch08.036"
+   ],
+   [
+    "ch08.038",
+    "ch08.040"
+   ]
+  ],
+  "answerCriteria": [
+   "An empty slot terminates lookup and can break the probe chain to a later colliding key.",
+   "A tombstone makes lookup continue while allowing insertion to reuse the slot."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "mismatched_probing.casual_c",
+  "concept": "mismatched_probing",
+  "chapter": 8,
+  "kind": "casual_c",
+  "question": "If I put something in a slot because another item was already there, does looking for it use the same rule to find it that putting it used?",
+  "goldGroups": [
+   [
+    "ch08.050",
+    "ch08.051",
+    "ch08.053"
+   ],
+   [
+    "ch08.052",
+    "ch08.053"
+   ]
+  ],
+  "answerCriteria": [
+   "Insertion and lookup must use the same collision probe sequence.",
+   "Linear lookup can encounter an empty slot and stop before a key placed farther away by quadratic probing."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "mismatched_probing.casual_d",
+  "concept": "mismatched_probing",
+  "chapter": 8,
+  "kind": "casual_d",
+  "question": "When the program finds a spot for a new item, does it have to use the exact same steps to find it later?",
+  "goldGroups": [
+   [
+    "ch08.050",
+    "ch08.051",
+    "ch08.053"
+   ],
+   [
+    "ch08.052",
+    "ch08.053"
+   ]
+  ],
+  "answerCriteria": [
+   "Insertion and lookup must use the same collision probe sequence.",
+   "Linear lookup can encounter an empty slot and stop before a key placed farther away by quadratic probing."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "mismatched_probing.casual_e",
+  "concept": "mismatched_probing",
+  "chapter": 8,
+  "kind": "casual_e",
+  "question": "If putting an item in requires skipping over filled slots in a certain pattern, will reading the item skip over those same slots in the same pattern?",
+  "goldGroups": [
+   [
+    "ch08.050",
+    "ch08.051",
+    "ch08.053"
+   ],
+   [
+    "ch08.052",
+    "ch08.053"
+   ]
+  ],
+  "answerCriteria": [
+   "Insertion and lookup must use the same collision probe sequence.",
+   "Linear lookup can encounter an empty slot and stop before a key placed farther away by quadratic probing."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "mismatched_probing.casual_f",
+  "concept": "mismatched_probing",
+  "chapter": 8,
+  "kind": "casual_f",
+  "question": "If I use a formula to find where to put things, does the program reading them use that exact same formula, or does it use a different way to check nearby spots?",
+  "goldGroups": [
+   [
+    "ch08.050",
+    "ch08.051",
+    "ch08.053"
+   ],
+   [
+    "ch08.052",
+    "ch08.053"
+   ]
+  ],
+  "answerCriteria": [
+   "Insertion and lookup must use the same collision probe sequence.",
+   "Linear lookup can encounter an empty slot and stop before a key placed farther away by quadratic probing."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "mismatched_probing.casual_g",
+  "concept": "mismatched_probing",
+  "chapter": 8,
+  "kind": "casual_g",
+  "question": "If the first time I store something it jumps over a few empty spots, will the program looking for it jump over those same empty spots?",
+  "goldGroups": [
+   [
+    "ch08.050",
+    "ch08.051",
+    "ch08.053"
+   ],
+   [
+    "ch08.052",
+    "ch08.053"
+   ]
+  ],
+  "answerCriteria": [
+   "Insertion and lookup must use the same collision probe sequence.",
+   "Linear lookup can encounter an empty slot and stop before a key placed farther away by quadratic probing."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_ranges.casual_c",
+  "concept": "hash_ranges",
+  "chapter": 8,
+  "kind": "casual_c",
+  "question": "If I want to find all records whose dates fall between January 1st and the end of the month, what does the passage say about using the hash index for that?",
+  "goldGroups": [
+   [
+    "ch08.054",
+    "ch08.055",
+    "ch08.056",
+    "ch08.057",
+    "ch08.058"
+   ]
+  ],
+  "answerCriteria": [
+   "Hashing does not preserve key order, so nearby values need not occupy nearby buckets.",
+   "A range generally requires scanning rather than one direct lookup; an ordered index is more suitable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_ranges.casual_d",
+  "concept": "hash_ranges",
+  "chapter": 8,
+  "kind": "casual_d",
+  "question": "When the passage compares finding one specific thing versus finding a group of things, what does it say about how the hash index has to look through everything?",
+  "goldGroups": [
+   [
+    "ch08.054",
+    "ch08.055",
+    "ch08.056",
+    "ch08.057",
+    "ch08.058"
+   ]
+  ],
+  "answerCriteria": [
+   "Hashing does not preserve key order, so nearby values need not occupy nearby buckets.",
+   "A range generally requires scanning rather than one direct lookup; an ordered index is more suitable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_ranges.casual_e",
+  "concept": "hash_ranges",
+  "chapter": 8,
+  "kind": "casual_e",
+  "question": "If I build a hash index, and then I want to see all the values from 100 up to 500, what process does the book say the index has to use?",
+  "goldGroups": [
+   [
+    "ch08.054",
+    "ch08.055",
+    "ch08.056",
+    "ch08.057",
+    "ch08.058"
+   ]
+  ],
+  "answerCriteria": [
+   "Hashing does not preserve key order, so nearby values need not occupy nearby buckets.",
+   "A range generally requires scanning rather than one direct lookup; an ordered index is more suitable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_ranges.casual_f",
+  "concept": "hash_ranges",
+  "chapter": 8,
+  "kind": "casual_f",
+  "question": "What does the text explain about the difference in how the hash index finds data versus how it has to find a whole group of data?",
+  "goldGroups": [
+   [
+    "ch08.054",
+    "ch08.055",
+    "ch08.056",
+    "ch08.057",
+    "ch08.058"
+   ]
+  ],
+  "answerCriteria": [
+   "Hashing does not preserve key order, so nearby values need not occupy nearby buckets.",
+   "A range generally requires scanning rather than one direct lookup; an ordered index is more suitable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_ranges.casual_g",
+  "concept": "hash_ranges",
+  "chapter": 8,
+  "kind": "casual_g",
+  "question": "According to the comparison table, if I need to get all the results back in order, which index structure is better and why?",
+  "goldGroups": [
+   [
+    "ch08.054",
+    "ch08.055",
+    "ch08.056",
+    "ch08.057",
+    "ch08.058"
+   ]
+  ],
+  "answerCriteria": [
+   "Hashing does not preserve key order, so nearby values need not occupy nearby buckets.",
+   "A range generally requires scanning rather than one direct lookup; an ordered index is more suitable."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_growth.casual_c",
+  "concept": "hash_growth",
+  "chapter": 8,
+  "kind": "casual_c",
+  "question": "If I keep adding stuff, what happens to how fast I can look things up in the table?",
+  "goldGroups": [
+   [
+    "ch08.061"
+   ],
+   [
+    "ch08.073",
+    "ch08.074"
+   ]
+  ],
+  "answerCriteria": [
+   "More occupied slots increase collisions and probe lengths.",
+   "Changing capacity changes key placement, requiring rehashing/reinserting existing entries and potentially a blocking rebuild."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_growth.casual_d",
+  "concept": "hash_growth",
+  "chapter": 8,
+  "kind": "casual_d",
+  "question": "When the table gets too full, what exactly does it mean that the 'ratio of filled slots to total capacity' is getting worse?",
+  "goldGroups": [
+   [
+    "ch08.061"
+   ],
+   [
+    "ch08.073",
+    "ch08.074"
+   ]
+  ],
+  "answerCriteria": [
+   "More occupied slots increase collisions and probe lengths.",
+   "Changing capacity changes key placement, requiring rehashing/reinserting existing entries and potentially a blocking rebuild."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_growth.casual_e",
+  "concept": "hash_growth",
+  "chapter": 8,
+  "kind": "casual_e",
+  "question": "If I double the size of the table, do I have to go through every single thing I put in before to put it in the new spots?",
+  "goldGroups": [
+   [
+    "ch08.061"
+   ],
+   [
+    "ch08.073",
+    "ch08.074"
+   ]
+  ],
+  "answerCriteria": [
+   "More occupied slots increase collisions and probe lengths.",
+   "Changing capacity changes key placement, requiring rehashing/reinserting existing entries and potentially a blocking rebuild."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_growth.casual_f",
+  "concept": "hash_growth",
+  "chapter": 8,
+  "kind": "casual_f",
+  "question": "What is the main problem with having to stop the whole system while it rebuilds the index to make it bigger?",
+  "goldGroups": [
+   [
+    "ch08.061"
+   ],
+   [
+    "ch08.073",
+    "ch08.074"
+   ]
+  ],
+  "answerCriteria": [
+   "More occupied slots increase collisions and probe lengths.",
+   "Changing capacity changes key placement, requiring rehashing/reinserting existing entries and potentially a blocking rebuild."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "hash_growth.casual_g",
+  "concept": "hash_growth",
+  "chapter": 8,
+  "kind": "casual_g",
+  "question": "If the way I figure out where a key goes depends on how big the table is, why does that make the whole process so complicated when I try to grow it?",
+  "goldGroups": [
+   [
+    "ch08.061"
+   ],
+   [
+    "ch08.073",
+    "ch08.074"
+   ]
+  ],
+  "answerCriteria": [
+   "More occupied slots increase collisions and probe lengths.",
+   "Changing capacity changes key placement, requiring rehashing/reinserting existing entries and potentially a blocking rebuild."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "extendible_split.casual_c",
+  "concept": "extendible_split",
+  "chapter": 8,
+  "kind": "casual_c",
+  "question": "If my data gets too crowded in one spot, how do I know if I can just split it into a new spot without changing the main lookup book?",
+  "goldGroups": [
+   [
+    "ch08.077",
+    "ch08.080"
+   ],
+   [
+    "ch08.078",
+    "ch08.080"
+   ]
+  ],
+  "answerCriteria": [
+   "If local depth is below global depth, split and redirect existing directory entries without doubling.",
+   "If local depth equals global depth, double the directory/increment global depth, then split."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "extendible_split.casual_d",
+  "concept": "extendible_split",
+  "chapter": 8,
+  "kind": "casual_d",
+  "question": "When I look up something, what's the first thing that tells me which section of the system I need to check?",
+  "goldGroups": [
+   [
+    "ch08.077",
+    "ch08.080"
+   ],
+   [
+    "ch08.078",
+    "ch08.080"
+   ]
+  ],
+  "answerCriteria": [
+   "If local depth is below global depth, split and redirect existing directory entries without doubling.",
+   "If local depth equals global depth, double the directory/increment global depth, then split."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "extendible_split.casual_e",
+  "concept": "extendible_split",
+  "chapter": 8,
+  "kind": "casual_e",
+  "question": "Imagine the main guide book for finding data. If a spot gets too full, what makes the guide book itself get bigger?",
+  "goldGroups": [
+   [
+    "ch08.077",
+    "ch08.080"
+   ],
+   [
+    "ch08.078",
+    "ch08.080"
+   ]
+  ],
+  "answerCriteria": [
+   "If local depth is below global depth, split and redirect existing directory entries without doubling.",
+   "If local depth equals global depth, double the directory/increment global depth, then split."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "extendible_split.casual_f",
+  "concept": "extendible_split",
+  "chapter": 8,
+  "kind": "casual_f",
+  "question": "If I have a small side section that's overflowing, and the main guide book is already big enough, how do I move things around to fix it?",
+  "goldGroups": [
+   [
+    "ch08.077",
+    "ch08.080"
+   ],
+   [
+    "ch08.078",
+    "ch08.080"
+   ]
+  ],
+  "answerCriteria": [
+   "If local depth is below global depth, split and redirect existing directory entries without doubling.",
+   "If local depth equals global depth, double the directory/increment global depth, then split."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "extendible_split.casual_g",
+  "concept": "extendible_split",
+  "chapter": 8,
+  "kind": "casual_g",
+  "question": "What's the difference between the 'size' of the spot I'm currently looking at and the 'size' of the whole system's guide book?",
+  "goldGroups": [
+   [
+    "ch08.077",
+    "ch08.080"
+   ],
+   [
+    "ch08.078",
+    "ch08.080"
+   ]
+  ],
+  "answerCriteria": [
+   "If local depth is below global depth, split and redirect existing directory entries without doubling.",
+   "If local depth equals global depth, double the directory/increment global depth, then split."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "shared_readers.casual_c",
+  "concept": "shared_readers",
+  "chapter": 8,
+  "kind": "casual_c",
+  "question": "What's the difference between a lock that lets everyone read at once and one that only lets one person write?",
+  "goldGroups": [
+   [
+    "ch08.103"
+   ]
+  ],
+  "answerCriteria": [
+   "Multiple readers can hold a shared lock because they do not modify data.",
+   "A writer needs exclusive access and must wait for existing readers/writers."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "shared_readers.casual_d",
+  "concept": "shared_readers",
+  "chapter": 8,
+  "kind": "casual_d",
+  "question": "If nobody is changing the information, can multiple people look at it at the exact same time?",
+  "goldGroups": [
+   [
+    "ch08.103"
+   ]
+  ],
+  "answerCriteria": [
+   "Multiple readers can hold a shared lock because they do not modify data.",
+   "A writer needs exclusive access and must wait for existing readers/writers."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "shared_readers.casual_e",
+  "concept": "shared_readers",
+  "chapter": 8,
+  "kind": "casual_e",
+  "question": "Why is writing information always treated as a single-person job, even if nothing else is happening?",
+  "goldGroups": [
+   [
+    "ch08.103"
+   ]
+  ],
+  "answerCriteria": [
+   "Multiple readers can hold a shared lock because they do not modify data.",
+   "A writer needs exclusive access and must wait for existing readers/writers."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "shared_readers.casual_f",
+  "concept": "shared_readers",
+  "chapter": 8,
+  "kind": "casual_f",
+  "question": "If most people are just looking at the data, why does the current locking system still make them wait in line?",
+  "goldGroups": [
+   [
+    "ch08.103"
+   ]
+  ],
+  "answerCriteria": [
+   "Multiple readers can hold a shared lock because they do not modify data.",
+   "A writer needs exclusive access and must wait for existing readers/writers."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "shared_readers.casual_g",
+  "concept": "shared_readers",
+  "chapter": 8,
+  "kind": "casual_g",
+  "question": "When does the system need to make sure that multiple people reading something won't mess up if someone else is trying to change it?",
+  "goldGroups": [
+   [
+    "ch08.103"
+   ]
+  ],
+  "answerCriteria": [
+   "Multiple readers can hold a shared lock because they do not modify data.",
+   "A writer needs exclusive access and must wait for existing readers/writers."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "operator_lifecycle.casual_c",
+  "concept": "operator_lifecycle",
+  "chapter": 11,
+  "kind": "casual_c",
+  "question": "When is the very first step done to get everything ready to run a query?",
+  "goldGroups": [
+   [
+    "ch11.021",
+    "ch11.020"
+   ],
+   [
+    "ch11.022",
+    "ch11.020"
+   ],
+   [
+    "ch11.023",
+    "ch11.020"
+   ],
+   [
+    "ch11.024",
+    "ch11.020"
+   ]
+  ],
+  "answerCriteria": [
+   "Initialize with open, then loop on next; true means output is available via getOutput.",
+   "False means exhaustion; close releases acquired resources."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "operator_lifecycle.casual_d",
+  "concept": "operator_lifecycle",
+  "chapter": 11,
+  "kind": "casual_d",
+  "question": "If the program runs out of data to show, what is the final signal that tells the system to stop?",
+  "goldGroups": [
+   [
+    "ch11.021",
+    "ch11.020"
+   ],
+   [
+    "ch11.022",
+    "ch11.020"
+   ],
+   [
+    "ch11.023",
+    "ch11.020"
+   ],
+   [
+    "ch11.024",
+    "ch11.020"
+   ]
+  ],
+  "answerCriteria": [
+   "Initialize with open, then loop on next; true means output is available via getOutput.",
+   "False means exhaustion; close releases acquired resources."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "operator_lifecycle.casual_e",
+  "concept": "operator_lifecycle",
+  "chapter": 11,
+  "kind": "casual_e",
+  "question": "After the whole process is finished, what needs to happen to clean up any files or memory used by the different parts?",
+  "goldGroups": [
+   [
+    "ch11.021",
+    "ch11.020"
+   ],
+   [
+    "ch11.022",
+    "ch11.020"
+   ],
+   [
+    "ch11.023",
+    "ch11.020"
+   ],
+   [
+    "ch11.024",
+    "ch11.020"
+   ]
+  ],
+  "answerCriteria": [
+   "Initialize with open, then loop on next; true means output is available via getOutput.",
+   "False means exhaustion; close releases acquired resources."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "operator_lifecycle.casual_f",
+  "concept": "operator_lifecycle",
+  "chapter": 11,
+  "kind": "casual_f",
+  "question": "Why do I have to call a special function to get the actual data values once I know there's a new row available?",
+  "goldGroups": [
+   [
+    "ch11.021",
+    "ch11.020"
+   ],
+   [
+    "ch11.022",
+    "ch11.020"
+   ],
+   [
+    "ch11.023",
+    "ch11.020"
+   ],
+   [
+    "ch11.024",
+    "ch11.020"
+   ]
+  ],
+  "answerCriteria": [
+   "Initialize with open, then loop on next; true means output is available via getOutput.",
+   "False means exhaustion; close releases acquired resources."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "operator_lifecycle.casual_g",
+  "concept": "operator_lifecycle",
+  "chapter": 11,
+  "kind": "casual_g",
+  "question": "What is the main idea that lets different parts of the query work together without needing to know how the other parts are built?",
+  "goldGroups": [
+   [
+    "ch11.021",
+    "ch11.020"
+   ],
+   [
+    "ch11.022",
+    "ch11.020"
+   ],
+   [
+    "ch11.023",
+    "ch11.020"
+   ],
+   [
+    "ch11.024",
+    "ch11.020"
+   ]
+  ],
+  "answerCriteria": [
+   "Initialize with open, then loop on next; true means output is available via getOutput.",
+   "False means exhaustion; close releases acquired resources."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pull_direction.casual_c",
+  "concept": "pull_direction",
+  "chapter": 11,
+  "kind": "casual_c",
+  "question": "If I ask for just one piece of information, what part of the process is running to get that single piece back to me?",
+  "goldGroups": [
+   [
+    "ch11.027"
+   ],
+   [
+    "ch11.028"
+   ]
+  ],
+  "answerCriteria": [
+   "The executor calls next on the root, which recursively requests input from children.",
+   "Leaf data moves upward through filtering/projection; a filter can request more than one child tuple before returning."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pull_direction.casual_d",
+  "concept": "pull_direction",
+  "chapter": 11,
+  "kind": "casual_d",
+  "question": "When the system is getting the results, what is the difference between the instructions moving down and the actual information moving up?",
+  "goldGroups": [
+   [
+    "ch11.027"
+   ],
+   [
+    "ch11.028"
+   ]
+  ],
+  "answerCriteria": [
+   "The executor calls next on the root, which recursively requests input from children.",
+   "Leaf data moves upward through filtering/projection; a filter can request more than one child tuple before returning."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pull_direction.casual_e",
+  "concept": "pull_direction",
+  "chapter": 11,
+  "kind": "casual_e",
+  "question": "If the first record I read out of the student list doesn't pass the filter, what happens to that record before the system asks for the next one?",
+  "goldGroups": [
+   [
+    "ch11.027"
+   ],
+   [
+    "ch11.028"
+   ]
+  ],
+  "answerCriteria": [
+   "The executor calls next on the root, which recursively requests input from children.",
+   "Leaf data moves upward through filtering/projection; a filter can request more than one child tuple before returning."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pull_direction.casual_f",
+  "concept": "pull_direction",
+  "chapter": 11,
+  "kind": "casual_f",
+  "question": "What is the role of the very top step in deciding when it can finally give me an answer?",
+  "goldGroups": [
+   [
+    "ch11.027"
+   ],
+   [
+    "ch11.028"
+   ]
+  ],
+  "answerCriteria": [
+   "The executor calls next on the root, which recursively requests input from children.",
+   "Leaf data moves upward through filtering/projection; a filter can request more than one child tuple before returning."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pull_direction.casual_g",
+  "concept": "pull_direction",
+  "chapter": 11,
+  "kind": "casual_g",
+  "question": "When the system gets a full row from the start, what does the middle step do with it before passing it up?",
+  "goldGroups": [
+   [
+    "ch11.027"
+   ],
+   [
+    "ch11.028"
+   ]
+  ],
+  "answerCriteria": [
+   "The executor calls next on the root, which recursively requests input from children.",
+   "Leaf data moves upward through filtering/projection; a filter can request more than one child tuple before returning."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pipeline_latency.casual_c",
+  "concept": "pipeline_latency",
+  "chapter": 11,
+  "kind": "casual_c",
+  "question": "If I use the materialization way, do I have to wait until the very end to see any results come out?",
+  "goldGroups": [
+   [
+    "ch11.031",
+    "ch11.032"
+   ],
+   [
+    "ch11.033",
+    "ch11.032"
+   ]
+  ],
+  "answerCriteria": [
+   "Materialization writes/buffers whole intermediate results before the next stage proceeds.",
+   "Pipelining reduces intermediate I/O/memory and lets downstream work/first results begin earlier."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pipeline_latency.casual_d",
+  "concept": "pipeline_latency",
+  "chapter": 11,
+  "kind": "casual_d",
+  "question": "What is the difference in how much computer memory the two ways use?",
+  "goldGroups": [
+   [
+    "ch11.031",
+    "ch11.032"
+   ],
+   [
+    "ch11.033",
+    "ch11.032"
+   ]
+  ],
+  "answerCriteria": [
+   "Materialization writes/buffers whole intermediate results before the next stage proceeds.",
+   "Pipelining reduces intermediate I/O/memory and lets downstream work/first results begin earlier."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pipeline_latency.casual_e",
+  "concept": "pipeline_latency",
+  "chapter": 11,
+  "kind": "casual_e",
+  "question": "When the system has to calculate an average or count things, why does it sometimes have to pause and save everything first?",
+  "goldGroups": [
+   [
+    "ch11.031",
+    "ch11.032"
+   ],
+   [
+    "ch11.033",
+    "ch11.032"
+   ]
+  ],
+  "answerCriteria": [
+   "Materialization writes/buffers whole intermediate results before the next stage proceeds.",
+   "Pipelining reduces intermediate I/O/memory and lets downstream work/first results begin earlier."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pipeline_latency.casual_f",
+  "concept": "pipeline_latency",
+  "chapter": 11,
+  "kind": "casual_f",
+  "question": "Is it true that if I just want to see the first few rows right away, the materialization method is slow?",
+  "goldGroups": [
+   [
+    "ch11.031",
+    "ch11.032"
+   ],
+   [
+    "ch11.033",
+    "ch11.032"
+   ]
+  ],
+  "answerCriteria": [
+   "Materialization writes/buffers whole intermediate results before the next stage proceeds.",
+   "Pipelining reduces intermediate I/O/memory and lets downstream work/first results begin earlier."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "pipeline_latency.casual_g",
+  "concept": "pipeline_latency",
+  "chapter": 11,
+  "kind": "casual_g",
+  "question": "When a step has to look at everything before it can give an answer (like when sorting), does that mean it can't use the smooth, flowing method?",
+  "goldGroups": [
+   [
+    "ch11.031",
+    "ch11.032"
+   ],
+   [
+    "ch11.033",
+    "ch11.032"
+   ]
+  ],
+  "answerCriteria": [
+   "Materialization writes/buffers whole intermediate results before the next stage proceeds.",
+   "Pipelining reduces intermediate I/O/memory and lets downstream work/first results begin earlier."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "move_output.casual_c",
+  "concept": "move_output",
+  "chapter": 11,
+  "kind": "casual_c",
+  "question": "If the data in the table is really big, why is using 'std::move' better than copying it?",
+  "goldGroups": [
+   [
+    "ch11.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Moving transfers ownership cheaply instead of allocating/copying all field data.",
+   "The source is valid but moved-from; the next successful next call replaces the current tuple."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "move_output.casual_d",
+  "concept": "move_output",
+  "chapter": 11,
+  "kind": "casual_d",
+  "question": "What happens to the data the scanner was holding right after it hands it off to the next part of the query?",
+  "goldGroups": [
+   [
+    "ch11.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Moving transfers ownership cheaply instead of allocating/copying all field data.",
+   "The source is valid but moved-from; the next successful next call replaces the current tuple."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "move_output.casual_e",
+  "concept": "move_output",
+  "chapter": 11,
+  "kind": "casual_e",
+  "question": "Does the system have to make a brand new copy of the data every time it goes through a few steps?",
+  "goldGroups": [
+   [
+    "ch11.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Moving transfers ownership cheaply instead of allocating/copying all field data.",
+   "The source is valid but moved-from; the next successful next call replaces the current tuple."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "move_output.casual_f",
+  "concept": "move_output",
+  "chapter": 11,
+  "kind": "casual_f",
+  "question": "If the scanner gives up the data, can it just use that spot again later on?",
+  "goldGroups": [
+   [
+    "ch11.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Moving transfers ownership cheaply instead of allocating/copying all field data.",
+   "The source is valid but moved-from; the next successful next call replaces the current tuple."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "move_output.casual_g",
+  "concept": "move_output",
+  "chapter": 11,
+  "kind": "casual_g",
+  "question": "What does it mean that 'performing a move' is fast even if the data is huge?",
+  "goldGroups": [
+   [
+    "ch11.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Moving transfers ownership cheaply instead of allocating/copying all field data.",
+   "The source is valid but moved-from; the next successful next call replaces the current tuple."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "scan_empty_slots.casual_c",
+  "concept": "scan_empty_slots",
+  "chapter": 11,
+  "kind": "casual_c",
+  "question": "What happens when the code reaches the point where it knows it has checked every single page in the table?",
+  "goldGroups": [
+   [
+    "ch11.052",
+    "ch11.048"
+   ],
+   [
+    "ch11.056",
+    "ch11.048"
+   ]
+  ],
+  "answerCriteria": [
+   "Empty slots are skipped while scanning for an occupied slot; a hole is not end-of-table.",
+   "After all pages are exhausted, currentTuple is reset/null, signaling no more rows."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "scan_empty_slots.casual_d",
+  "concept": "scan_empty_slots",
+  "chapter": 11,
+  "kind": "casual_d",
+  "question": "If a spot on a page is marked as empty, what does the process do with that spot before checking the one after it?",
+  "goldGroups": [
+   [
+    "ch11.052",
+    "ch11.048"
+   ],
+   [
+    "ch11.056",
+    "ch11.048"
+   ]
+  ],
+  "answerCriteria": [
+   "Empty slots are skipped while scanning for an occupied slot; a hole is not end-of-table.",
+   "After all pages are exhausted, currentTuple is reset/null, signaling no more rows."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "scan_empty_slots.casual_e",
+  "concept": "scan_empty_slots",
+  "chapter": 11,
+  "kind": "casual_e",
+  "question": "When the process finishes looking through all the available pages, what is the final result shown?",
+  "goldGroups": [
+   [
+    "ch11.052",
+    "ch11.048"
+   ],
+   [
+    "ch11.056",
+    "ch11.048"
+   ]
+  ],
+  "answerCriteria": [
+   "Empty slots are skipped while scanning for an occupied slot; a hole is not end-of-table.",
+   "After all pages are exhausted, currentTuple is reset/null, signaling no more rows."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "scan_empty_slots.casual_f",
+  "concept": "scan_empty_slots",
+  "chapter": 11,
+  "kind": "casual_f",
+  "question": "If the program can't find another record to read, what specific action is taken to show that the reading process is over?",
+  "goldGroups": [
+   [
+    "ch11.052",
+    "ch11.048"
+   ],
+   [
+    "ch11.056",
+    "ch11.048"
+   ]
+  ],
+  "answerCriteria": [
+   "Empty slots are skipped while scanning for an occupied slot; a hole is not end-of-table.",
+   "After all pages are exhausted, currentTuple is reset/null, signaling no more rows."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "scan_empty_slots.casual_g",
+  "concept": "scan_empty_slots",
+  "chapter": 11,
+  "kind": "casual_g",
+  "question": "If one page is full of empty spots, how does the system know to start looking at the next page instead of just stopping?",
+  "goldGroups": [
+   [
+    "ch11.052",
+    "ch11.048"
+   ],
+   [
+    "ch11.056",
+    "ch11.048"
+   ]
+  ],
+  "answerCriteria": [
+   "Empty slots are skipped while scanning for an occupied slot; a hole is not end-of-table.",
+   "After all pages are exhausted, currentTuple is reset/null, signaling no more rows."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "sort_blocking.casual_c",
+  "concept": "sort_blocking",
+  "chapter": 11,
+  "kind": "casual_c",
+  "question": "If the system can't show me any results right away, what is it busy doing instead?",
+  "goldGroups": [
+   [
+    "ch11.088",
+    "ch11.033"
+   ]
+  ],
+  "answerCriteria": [
+   "A filter can output each qualifying tuple independently.",
+   "A general sort must inspect all input to know global order/minimum, buffering or spilling before emitting sorted output."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "sort_blocking.casual_d",
+  "concept": "sort_blocking",
+  "chapter": 11,
+  "kind": "casual_d",
+  "question": "When does the program have to wait until it has looked at every single piece of data before showing anything?",
+  "goldGroups": [
+   [
+    "ch11.088",
+    "ch11.033"
+   ]
+  ],
+  "answerCriteria": [
+   "A filter can output each qualifying tuple independently.",
+   "A general sort must inspect all input to know global order/minimum, buffering or spilling before emitting sorted output."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "sort_blocking.casual_e",
+  "concept": "sort_blocking",
+  "chapter": 11,
+  "kind": "casual_e",
+  "question": "What kind of steps in a database process require it to collect everything first, like counting all the items?",
+  "goldGroups": [
+   [
+    "ch11.088",
+    "ch11.033"
+   ]
+  ],
+  "answerCriteria": [
+   "A filter can output each qualifying tuple independently.",
+   "A general sort must inspect all input to know global order/minimum, buffering or spilling before emitting sorted output."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "sort_blocking.casual_f",
+  "concept": "sort_blocking",
+  "chapter": 11,
+  "kind": "casual_f",
+  "question": "Why can't the system just start showing me the sorted results as soon as it gets a few rows?",
+  "goldGroups": [
+   [
+    "ch11.088",
+    "ch11.033"
+   ]
+  ],
+  "answerCriteria": [
+   "A filter can output each qualifying tuple independently.",
+   "A general sort must inspect all input to know global order/minimum, buffering or spilling before emitting sorted output."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "sort_blocking.casual_g",
+  "concept": "sort_blocking",
+  "chapter": 11,
+  "kind": "casual_g",
+  "question": "Does the way data flows change when a step needs to put everything in order?",
+  "goldGroups": [
+   [
+    "ch11.088",
+    "ch11.033"
+   ]
+  ],
+  "answerCriteria": [
+   "A filter can output each qualifying tuple independently.",
+   "A general sort must inspect all input to know global order/minimum, buffering or spilling before emitting sorted output."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "few_columns.casual_c",
+  "concept": "few_columns",
+  "chapter": 15,
+  "kind": "casual_c",
+  "question": "If the table has 8 different pieces of information for every person, and I only need to look at the 'age' and 'city' fields, how many total pages do I have to read compared to reading everything?",
+  "goldGroups": [
+   [
+    "ch15.037",
+    "ch15.036"
+   ],
+   [
+    "ch15.038",
+    "ch15.039",
+    "ch15.036"
+   ]
+  ],
+  "answerCriteria": [
+   "A row scan brings unrelated columns along with the needed ones.",
+   "Column storage can read just the filter/aggregate columns, reducing bytes/pages read when only a few columns are needed."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "few_columns.casual_d",
+  "concept": "few_columns",
+  "chapter": 15,
+  "kind": "casual_d",
+  "question": "When the text talks about '7,813 pages' vs '1,954 pages,' what does the difference in the numbers actually mean for how fast the computer reads the information?",
+  "goldGroups": [
+   [
+    "ch15.037",
+    "ch15.036"
+   ],
+   [
+    "ch15.038",
+    "ch15.039",
+    "ch15.036"
+   ]
+  ],
+  "answerCriteria": [
+   "A row scan brings unrelated columns along with the needed ones.",
+   "Column storage can read just the filter/aggregate columns, reducing bytes/pages read when only a few columns are needed."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "few_columns.casual_e",
+  "concept": "few_columns",
+  "chapter": 15,
+  "kind": "casual_e",
+  "question": "If I have 1 million entries, and the system reads in chunks of 4096 bytes, how many total chunks does it have to read for the row way versus the column way?",
+  "goldGroups": [
+   [
+    "ch15.037",
+    "ch15.036"
+   ],
+   [
+    "ch15.038",
+    "ch15.039",
+    "ch15.036"
+   ]
+  ],
+  "answerCriteria": [
+   "A row scan brings unrelated columns along with the needed ones.",
+   "Column storage can read just the filter/aggregate columns, reducing bytes/pages read when only a few columns are needed."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "few_columns.casual_f",
+  "concept": "few_columns",
+  "chapter": 15,
+  "kind": "casual_f",
+  "question": "If I only care about two columns out of eight, why does the column way only read about a quarter of the amount the row way reads?",
+  "goldGroups": [
+   [
+    "ch15.037",
+    "ch15.036"
+   ],
+   [
+    "ch15.038",
+    "ch15.039",
+    "ch15.036"
+   ]
+  ],
+  "answerCriteria": [
+   "A row scan brings unrelated columns along with the needed ones.",
+   "Column storage can read just the filter/aggregate columns, reducing bytes/pages read when only a few columns are needed."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "few_columns.casual_g",
+  "concept": "few_columns",
+  "chapter": 15,
+  "kind": "casual_g",
+  "question": "What is the general idea behind the calculation that compares reading 7,813 pages to 1,954 pages, just using simpler words?",
+  "goldGroups": [
+   [
+    "ch15.037",
+    "ch15.036"
+   ],
+   [
+    "ch15.038",
+    "ch15.039",
+    "ch15.036"
+   ]
+  ],
+  "answerCriteria": [
+   "A row scan brings unrelated columns along with the needed ones.",
+   "Column storage can read just the filter/aggregate columns, reducing bytes/pages read when only a few columns are needed."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "late_rows.casual_c",
+  "concept": "late_rows",
+  "chapter": 15,
+  "kind": "casual_c",
+  "question": "If it's too slow to jump around reading different parts of the data file when checking the first condition, what does the system do instead?",
+  "goldGroups": [
+   [
+    "ch15.042"
+   ],
+   [
+    "ch15.044",
+    "ch15.045"
+   ]
+  ],
+  "answerCriteria": [
+   "Record qualifying row positions/page offsets while scanning the filter column.",
+   "Use those positions to fetch corresponding aggregate values, grouped by page, without eagerly reconstructing complete tuples."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "late_rows.casual_d",
+  "concept": "late_rows",
+  "chapter": 15,
+  "kind": "casual_d",
+  "question": "Once it figures out which rows pass the first test, how does it keep track of *where* those matching pieces of information are located in the main data file?",
+  "goldGroups": [
+   [
+    "ch15.042"
+   ],
+   [
+    "ch15.044",
+    "ch15.045"
+   ]
+  ],
+  "answerCriteria": [
+   "Record qualifying row positions/page offsets while scanning the filter column.",
+   "Use those positions to fetch corresponding aggregate values, grouped by page, without eagerly reconstructing complete tuples."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "late_rows.casual_e",
+  "concept": "late_rows",
+  "chapter": 15,
+  "kind": "casual_e",
+  "question": "When the second part of the calculation starts, how does it use the list of saved locations to get the right numbers from the second file?",
+  "goldGroups": [
+   [
+    "ch15.042"
+   ],
+   [
+    "ch15.044",
+    "ch15.045"
+   ]
+  ],
+  "answerCriteria": [
+   "Record qualifying row positions/page offsets while scanning the filter column.",
+   "Use those positions to fetch corresponding aggregate values, grouped by page, without eagerly reconstructing complete tuples."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "late_rows.casual_f",
+  "concept": "late_rows",
+  "chapter": 15,
+  "kind": "casual_f",
+  "question": "Does the program ever have to build a temporary, complete record that sticks together all the matching pieces from both files at the same time?",
+  "goldGroups": [
+   [
+    "ch15.042"
+   ],
+   [
+    "ch15.044",
+    "ch15.045"
+   ]
+  ],
+  "answerCriteria": [
+   "Record qualifying row positions/page offsets while scanning the filter column.",
+   "Use those positions to fetch corresponding aggregate values, grouped by page, without eagerly reconstructing complete tuples."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "late_rows.casual_g",
+  "concept": "late_rows",
+  "chapter": 15,
+  "kind": "casual_g",
+  "question": "Why is it faster to process the data by looking at long strips of just one type of information, rather than looking at whole rows all at once?",
+  "goldGroups": [
+   [
+    "ch15.042"
+   ],
+   [
+    "ch15.044",
+    "ch15.045"
+   ]
+  ],
+  "answerCriteria": [
+   "Record qualifying row positions/page offsets while scanning the filter column.",
+   "Use those positions to fetch corresponding aggregate values, grouped by page, without eagerly reconstructing complete tuples."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "column_writes.casual_c",
+  "concept": "column_writes",
+  "chapter": 15,
+  "kind": "casual_c",
+  "question": "If I only want to check one piece of info for a lot of different people, why is it better if the data is all lined up by row instead of by column?",
+  "goldGroups": [
+   [
+    "ch15.048"
+   ]
+  ],
+  "answerCriteria": [
+   "One inserted row needs a value appended to every relevant column file.",
+   "One logical write becomes many physical writes, which is unfavorable for frequent small transactional inserts."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "column_writes.casual_d",
+  "concept": "column_writes",
+  "chapter": 15,
+  "kind": "casual_d",
+  "question": "If I add a brand new customer, what does the database have to do with all those separate files?",
+  "goldGroups": [
+   [
+    "ch15.048"
+   ]
+  ],
+  "answerCriteria": [
+   "One inserted row needs a value appended to every relevant column file.",
+   "One logical write becomes many physical writes, which is unfavorable for frequent small transactional inserts."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "column_writes.casual_e",
+  "concept": "column_writes",
+  "chapter": 15,
+  "kind": "casual_e",
+  "question": "What kind of work is this method of saving data really good for, like looking at tons of data at once?",
+  "goldGroups": [
+   [
+    "ch15.048"
+   ]
+  ],
+  "answerCriteria": [
+   "One inserted row needs a value appended to every relevant column file.",
+   "One logical write becomes many physical writes, which is unfavorable for frequent small transactional inserts."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "column_writes.casual_f",
+  "concept": "column_writes",
+  "chapter": 15,
+  "kind": "casual_f",
+  "question": "If I'm building something like an online store that changes a lot every day, what kind of data setup should I probably use?",
+  "goldGroups": [
+   [
+    "ch15.048"
+   ]
+  ],
+  "answerCriteria": [
+   "One inserted row needs a value appended to every relevant column file.",
+   "One logical write becomes many physical writes, which is unfavorable for frequent small transactional inserts."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "column_writes.casual_g",
+  "concept": "column_writes",
+  "chapter": 15,
+  "kind": "casual_g",
+  "question": "What is the difference in how the computer has to write data when it uses one file for everything versus many files for each type of information?",
+  "goldGroups": [
+   [
+    "ch15.048"
+   ]
+  ],
+  "answerCriteria": [
+   "One inserted row needs a value appended to every relevant column file.",
+   "One logical write becomes many physical writes, which is unfavorable for frequent small transactional inserts."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "timestamp_deltas.casual_c",
+  "concept": "timestamp_deltas",
+  "chapter": 15,
+  "kind": "casual_c",
+  "question": "If I only store the difference between times, how do I get the actual time back for any point?",
+  "goldGroups": [
+   [
+    "ch15.058",
+    "ch15.059",
+    "ch15.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Store the first/base timestamp and differences between successive timestamps.",
+   "Recover values with cumulative addition; small differences can be represented compactly using a suitable encoding."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "timestamp_deltas.casual_d",
+  "concept": "timestamp_deltas",
+  "chapter": 15,
+  "kind": "casual_d",
+  "question": "If the time readings are always in order, what is the advantage of recording how much the time jumped by instead of writing out the full time every time?",
+  "goldGroups": [
+   [
+    "ch15.058",
+    "ch15.059",
+    "ch15.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Store the first/base timestamp and differences between successive timestamps.",
+   "Recover values with cumulative addition; small differences can be represented compactly using a suitable encoding."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "timestamp_deltas.casual_e",
+  "concept": "timestamp_deltas",
+  "chapter": 15,
+  "kind": "casual_e",
+  "question": "What happens if I just write down the first time, and then write down how much the time went up each time?",
+  "goldGroups": [
+   [
+    "ch15.058",
+    "ch15.059",
+    "ch15.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Store the first/base timestamp and differences between successive timestamps.",
+   "Recover values with cumulative addition; small differences can be represented compactly using a suitable encoding."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "timestamp_deltas.casual_f",
+  "concept": "timestamp_deltas",
+  "chapter": 15,
+  "kind": "casual_f",
+  "question": "If I use this method, do I still need to save the very first time reading, or is that covered by the small differences?",
+  "goldGroups": [
+   [
+    "ch15.058",
+    "ch15.059",
+    "ch15.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Store the first/base timestamp and differences between successive timestamps.",
+   "Recover values with cumulative addition; small differences can be represented compactly using a suitable encoding."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "timestamp_deltas.casual_g",
+  "concept": "timestamp_deltas",
+  "chapter": 15,
+  "kind": "casual_g",
+  "question": "If I have a bunch of times recorded in order, can I save space by only recording the gaps between them?",
+  "goldGroups": [
+   [
+    "ch15.058",
+    "ch15.059",
+    "ch15.061"
+   ]
+  ],
+  "answerCriteria": [
+   "Store the first/base timestamp and differences between successive timestamps.",
+   "Recover values with cumulative addition; small differences can be represented compactly using a suitable encoding."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "small_integer_bits.casual_c",
+  "concept": "small_integer_bits",
+  "chapter": 15,
+  "kind": "casual_c",
+  "question": "If all my numbers are stuck between 60 and 75, why do computers still use huge amounts of space for each one?",
+  "goldGroups": [
+   [
+    "ch15.062"
+   ]
+  ],
+  "answerCriteria": [
+   "Retain/subtract the minimum so values become small nonnegative offsets.",
+   "Pack offsets using only enough bits for their range; restore by unpacking and adding the minimum."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "small_integer_bits.casual_d",
+  "concept": "small_integer_bits",
+  "chapter": 15,
+  "kind": "casual_d",
+  "question": "When I have lots of numbers that are close together, what's the secret trick to making them take up less space?",
+  "goldGroups": [
+   [
+    "ch15.062"
+   ]
+  ],
+  "answerCriteria": [
+   "Retain/subtract the minimum so values become small nonnegative offsets.",
+   "Pack offsets using only enough bits for their range; restore by unpacking and adding the minimum."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "small_integer_bits.casual_e",
+  "concept": "small_integer_bits",
+  "chapter": 15,
+  "kind": "casual_e",
+  "question": "If I subtract the lowest number from every other number, does that help me save space when I save the results?",
+  "goldGroups": [
+   [
+    "ch15.062"
+   ]
+  ],
+  "answerCriteria": [
+   "Retain/subtract the minimum so values become small nonnegative offsets.",
+   "Pack offsets using only enough bits for their range; restore by unpacking and adding the minimum."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "small_integer_bits.casual_f",
+  "concept": "small_integer_bits",
+  "chapter": 15,
+  "kind": "casual_f",
+  "question": "What does it mean when the text says it 'packs' numbers together into a single 8-bit byte?",
+  "goldGroups": [
+   [
+    "ch15.062"
+   ]
+  ],
+  "answerCriteria": [
+   "Retain/subtract the minimum so values become small nonnegative offsets.",
+   "Pack offsets using only enough bits for their range; restore by unpacking and adding the minimum."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "small_integer_bits.casual_g",
+  "concept": "small_integer_bits",
+  "chapter": 15,
+  "kind": "casual_g",
+  "question": "If I use this special method, can I fit more than two of my small numbers into one standard computer storage unit?",
+  "goldGroups": [
+   [
+    "ch15.062"
+   ]
+  ],
+  "answerCriteria": [
+   "Retain/subtract the minimum so values become small nonnegative offsets.",
+   "Pack offsets using only enough bits for their range; restore by unpacking and adding the minimum."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "batch_processing.casual_c",
+  "concept": "batch_processing",
+  "chapter": 15,
+  "kind": "casual_c",
+  "question": "If I have a lot of data, why is it better to process groups of it all at once rather than one by one?",
+  "goldGroups": [
+   [
+    "ch15.081"
+   ]
+  ],
+  "answerCriteria": [
+   "A batch amortizes function/dispatch overhead across many values.",
+   "Tight loops over contiguous arrays improve instruction/data locality and can enable SIMD."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "batch_processing.casual_d",
+  "concept": "batch_processing",
+  "chapter": 15,
+  "kind": "casual_d",
+  "question": "What does it mean that processing in groups helps the computer run faster?",
+  "goldGroups": [
+   [
+    "ch15.081"
+   ]
+  ],
+  "answerCriteria": [
+   "A batch amortizes function/dispatch overhead across many values.",
+   "Tight loops over contiguous arrays improve instruction/data locality and can enable SIMD."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "batch_processing.casual_e",
+  "concept": "batch_processing",
+  "chapter": 15,
+  "kind": "casual_e",
+  "question": "When the system reads many pieces of data together, what good things happen to the computer's memory?",
+  "goldGroups": [
+   [
+    "ch15.081"
+   ]
+  ],
+  "answerCriteria": [
+   "A batch amortizes function/dispatch overhead across many values.",
+   "Tight loops over contiguous arrays improve instruction/data locality and can enable SIMD."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "batch_processing.casual_f",
+  "concept": "batch_processing",
+  "chapter": 15,
+  "kind": "casual_f",
+  "question": "Is processing a bunch of data points at the same time different from doing the same thing to many separate piles of data?",
+  "goldGroups": [
+   [
+    "ch15.081"
+   ]
+  ],
+  "answerCriteria": [
+   "A batch amortizes function/dispatch overhead across many values.",
+   "Tight loops over contiguous arrays improve instruction/data locality and can enable SIMD."
+  ],
+  "generateAnswer": true
+ },
+ {
+  "id": "batch_processing.casual_g",
+  "concept": "batch_processing",
+  "chapter": 15,
+  "kind": "casual_g",
+  "question": "Why is reading data in chunks better for the computer than asking for every single piece one at a time?",
+  "goldGroups": [
+   [
+    "ch15.081"
+   ]
+  ],
+  "answerCriteria": [
+   "A batch amortizes function/dispatch overhead across many values.",
+   "Tight loops over contiguous arrays improve instruction/data locality and can enable SIMD."
+  ],
+  "generateAnswer": true
+ }
+]

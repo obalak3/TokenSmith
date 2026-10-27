@@ -1,0 +1,2594 @@
+[
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "flexible_rows.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States runtime Field vector allows varying numbers and types of fields and that the hardcoded struct forced code changes and recompilation, matching Chunk 531."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "tagged_values.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Names both the type tag and data_length written ahead of the bytes, and the null-terminator detail is in Chunks 449/452."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "text_storage.casual_a.A",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Correctly says the supplied chunks (746, 806, 476, 449) do not cover the text-format tradeoff, but neither criterion is met and the string-length detour does not answer the question."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "late_rows.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Describes recording qualifying positions in a page-keyed pageOffsetMap during the filter scan and then a second phase that fetches only the needed aggregate-column values from that map, matching chunk 780."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "mismatched_probing.casual_a.A",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Misreads the question as a full-table problem and never addresses the quadratic-insert vs linear-lookup mismatch, so neither criterion is met (the mismatch chunks were not in the supplied sources, but the answer also asserts both operations use quadratic probing)."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "scan_empty_slots.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States the scan keeps advancing past empty slots to the next valid record and that next() returns false once all pages are exhausted, matching Chunks 688/695/726; currentTuple is not named but the end signal is correctly given."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "page_capacity.casual_b.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains internal fragmentation (criterion 2) but never mentions page header or tuple metadata overhead (criterion 1), even though Chunk 482 lists both."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "scan_empty_slots.casual_b.A",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Declines to answer and neither criterion is addressed; the supplied sources only hint at 'next valid record' and do not contain the currentTuple reset, so the refusal is honest but still a non-answer."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "few_columns.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that a row layout drags unneeded columns along and that column storage reads only the needed columns to cut I/O, matching chunks 759/747/772."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "column_writes.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "States that an insert appends to every column file and that one logical write becomes many physical writes unsuited to small transactional writes, matching Chunk 786."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "operator_lifecycle.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Open/next/false/close sequence and resource cleanup are correct, but the answer says next() returns the tuple and never mentions that true means output is read via getOutput, which the question and criterion 1 ask for."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "timestamp_deltas.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Base timestamp plus deltas, cumulative addition to reconstruct, and fewer bits for small deltas are all stated and match Chunks 796/798."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "small_integer_bits.casual_b.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Frame-of-reference subtraction and bit-packing into a byte/word are explained correctly, but the restore step (unpack and add the minimum back) in criterion 2 is never mentioned."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "tagged_values.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Explains data_length for variable-length strings but never mentions the type tag that tells the engine number vs string, so only one criterion met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "extendible_split.casual_a.B",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Sources contain no extendible hashing material so the abstention is honest, but neither the local-depth split nor the directory-doubling criterion is met."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "page_capacity.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Names the page header overhead and the too-small leftover remnant (internal fragmentation), both directly from chunks 486 and 481."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "few_columns.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States that row layout drags unneeded columns along and that column layout reads only the filter/aggregate columns, cutting I/O; both criteria met and backed by Chunks 759 and 790."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "column_writes.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that a shredded-by-column layout forces one separate write per column file for a single inserted record and contrasts it with the row store's single contiguous write; consistent with Chunks 765/785."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "operator_lifecycle.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Covers open, the next loop, false meaning exhaustion, and close releasing resources, but omits that true means a tuple is available via getOutput, so criterion 1 has a notable gap."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "scan_empty_slots.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "States the scan advances past empty positions to the next valid record and that currentTuple is reset to nullptr after the last page, both directly from Chunks 688 and 704."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "timestamp_deltas.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "States base timestamp plus small deltas, reconstruction by successive addition, and that small deltas need fewer bits, matching chunks 796/798."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "hash_ranges.casual_b.B",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Answers a different question (deletion in open addressing) and never addresses that hashing destroys key order or that ranges need scanning or an ordered index."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "hash_growth.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Covers rising collisions and probe lengths, and explains that key % capacity changes on resize so every entry must be rehashed in a blocking stop-the-world rebuild."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "column_writes.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains appending to every column file and write amplification (one logical write, many physical writes) with row stores better for inserts, matching Chunk 786."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "deleted_hash_slot.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that emptying a slot breaks the probe chain to B and that a tombstone keeps lookups probing while insertions may reuse it, matching Chunks 576-580."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "column_writes.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "States that one insert appends to every column file and names write amplification as one logical write becoming many physical writes, bad for small transactional inserts."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "pipeline_latency.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Defines materialization as writing whole intermediate results before the next stage, and contrasts it with pipelining that avoids writing and re-reading intermediates and lets later operators start sooner, all backed by Chunk 679."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "shared_readers.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States readers share the lock because reading does not change data and a writer needs exclusive mode and must wait until no holder in any mode, as in chunk 643."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "operator_lifecycle.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Covers open, the next loop, false on exhaustion and close releasing resources, but never mentions that true means output is read via getOutput, which the question explicitly asks about and Chunk 676 supplies."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "hash_growth.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Covers load factor, collisions and longer probe chains, and explains the pause as a full rehash that rebuilds a larger table and reinserts every valid entry while halting access; matches Chunks 580/601."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "pull_direction.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly identifies the pull-based model driven from the top, but never describes next calls recursing down to children, data moving up through Select and Project, or a filter consuming several child tuples; the round trip is not explained."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "mismatched_probing.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Says yes an entry can be missed but never identifies the insert/lookup probe mismatch (not in these sources) and wrongly attributes the loss to a full table circling back."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "page_io.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Covers hardware/OS block transfers with high initial disk cost, and that loading a whole page amortizes it and serves nearby data from memory, per chunk 471."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "batch_processing.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortized function-call overhead across a batch, cache locality of tight loops over contiguous arrays, and SIMD, all from Chunk 819."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "text_storage.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "States the simplicity/transparency and inspectability tradeoff and the costs in parsing speed and storage space with the 123456789 example, all drawn from Chunk 502."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "deleted_hash_slot.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Correctly states empty stops lookup and would break the probe chain while a tombstone forces continued probing; insertion reuse is omitted but the lookup difference the question asks about is fully covered."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "small_integer_bits.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Same as r012: subtraction of the minimum and bit-packing are correct, but the restore-by-adding-the-minimum half of criterion 2 is absent."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "deleted_hash_slot.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains the broken probe chain and the three-state exists flag with tombstones continuing lookup; omits only the secondary point that insertion may reuse the slot."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "pipeline_latency.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Same materialization explanation with the temp1/temp2 example and the pipelining contrast, both criteria met from Chunk 679 with only a slight 'persistent storage' imprecision."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "small_integer_bits.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Frame-of-reference subtraction and bit-packing are correct, but the recovery steps are stated in the wrong order (adding the minimum back before unpacking the bits), a notable error in the restore description."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "mismatched_probing.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains the probe-sequence mismatch and reproduces the 5->6->9 vs 5->6->7 trace where lookup terminates early, matching Chunks 591/592."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "hash_growth.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "First criterion met via load factor and probe chains, but the resize question is answered only with 'move toward dynamic hashing' and never mentions rehashing or reinserting all entries, so the cause of the pause is missing."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "small_integer_bits.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States frame of reference subtraction of the minimum, bit-packing with only enough bits for the range, and recovery by unpacking and adding the minimum back; both criteria met with no false assertion."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "physical_independence.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Gives the stable Page::deserialize signature and the application's reliance on logical Tuple/Field objects, matching Chunk 536."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "sort_blocking.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Selection emits each qualifying tuple immediately while sort must see every tuple and buffer the input before emitting the first, per chunk 736."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "extendible_split.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly gives the d' < d no-resize case and that d' = d requires resizing, but opens with a false hedge that the sources do not describe the structure and never states the directory doubles or global depth increments."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "extendible_split.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": false,
+  "note": "Correctly says a split need not grow the directory, but the local vs global depth condition is never given and the vague 'exceeds what the directory can map' rule is not in the supplied sources."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "flexible_rows.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Describes moving from a compile-time struct to a runtime representation handling variable column counts and typed values without recompilation, matching Chunks 424/436."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "few_columns.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Row layout drags along unneeded columns and column layout reads only the required columns, with the OLTP trade-off backed by Chunk 784."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "scan_empty_slots.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Never answers whether the scan stops at a hole (only vaguely says it advances to the next valid record) and describes end-of-stream only generically via currentPage, so both criteria are touched but with notable gaps."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "deleted_hash_slot.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains that empty stops lookup and a tombstone forces probing to continue, but omits that insertion may reuse the tombstone slot, which is half of criterion 2 and is in Chunk 578."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "sort_blocking.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Selection evaluates tuple by tuple while Sort must consume all input before emitting the first element, matching the blocking table in chunk 737."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "timestamp_deltas.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Store first timestamp plus small deltas, recover by cumulative addition, deltas fit in fewer bits; both criteria met per Chunks 796/798."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "flexible_rows.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly diagnoses the hardcoded two-int schema and says the schema must be definable independently of the code, but never describes the solution (a runtime collection of typed Field objects), so criterion 1 is not met."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "mismatched_probing.casual_a.A",
+  "arm": "off",
+  "score": 0,
+  "supported": false,
+  "note": "Never says insertion and lookup must use the same probe sequence and never explains that a linear lookup stops at an empty slot before the quadratically placed key; instead it offers a wrong mechanism (probe sequence not covering all slots, table being full) that the sources do not support for a present key."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "move_output.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Explains next()/getOutput() separation and that the current tuple is replaced on the next call, but never mentions move semantics or the moved-from state (std::move content absent from sources)."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "sort_blocking.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Same correct non-blocking filter versus blocking sort explanation with full-input buffering, supported by chunks 736/681/737."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "scan_empty_slots.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Says the scan does not stop at empty slots but advances to the next valid record, and that end of stream is signalled by next() returning false from the state left by a failed load, consistent with Chunks 688 and 695."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "deleted_hash_slot.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that an emptied slot terminates the probe and breaks the chain to B, and that a tombstone forces lookup to continue probing, matching Chunks 577 and 578."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "timestamp_deltas.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "States first value in full plus small deltas, fewer bits, and reconstruction by successive addition, matching Chunks 796/798."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "hash_ranges.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Gives the O(N) range cost and the ordered B+ tree alternative, but never explains that hashing does not preserve key order; criterion 1 is only implied by contrast."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "hash_ranges.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": false,
+  "note": "Makes the order-scrambling point, but that mechanism is not in the supplied sources (which only assert range queries are slow), and it never says a range needs a scan or that an ordered index is the fit."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "tagged_values.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Covers data_length for variable-length values (criterion 2) but never mentions the type tag that tells the engine whether the bytes are a number or a string (criterion 1)."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "extendible_split.casual_a.A",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Claims the sources do not describe the directory-based structure although extendible hashing is exactly that, and never gives the local-depth versus global-depth rule for when the directory doubles, so neither criterion is met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "tagged_values.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Explains data_length for variable-length strings (Chunk 444) but omits the type tag that tells the engine how to interpret the bytes."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "extendible_split.casual_a.B",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Neither criterion addressed; the answer declines and gives only generic extendible-hashing facts, and the local/global depth rule is genuinely absent from the supplied sources, so this is an honest abstention that still earns no credit."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "small_integer_bits.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Identical to r042: subtract the minimum, bit-pack with the minimal bit width, restore by unpacking and adding the minimum; both criteria met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "tagged_values.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Covers data_length for variable-length values but only vaguely gestures at 'metadata' and 'type information' without stating a type tag."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "tagged_values.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Identifies the FieldType tag for interpretation and data_length for the byte size of variable-length values, matching chunks 442/444."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "extendible_split.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "States that d' < d allows a local split with pointer redirection and that d' = d forces directory doubling, matching Chunks 618 and 619."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "flexible_rows.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Covers type mismatch and avoiding recompilation, but only vaguely gestures at a runtime container and never states that a collection of fields allows a variable number of columns."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "late_rows.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Names late materialization and collecting offsets in phase one, but the use of those positions to fetch aggregate values grouped by page is left vague and phase two is mislabeled."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "hash_ranges.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Identical to r060: criterion 2 met via O(N) scan and ordered index, criterion 1 (hash scrambles key order) left implicit."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "timestamp_deltas.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Describes storing the base timestamp plus successive deltas, reconstruction by cumulative addition, and that small deltas take fewer bits, all per Chunks 796/798."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "move_output.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Explains cheap ownership transfer via std::move but omits the moved-from state and the fact that the next successful next() replaces currentTuple, which Chunk 709 states explicitly."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "batch_processing.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortized function-call overhead over the batch, cache locality of tight loops over contiguous arrays, and SIMD, all from chunk 819."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "scan_empty_slots.casual_b.B",
+  "arm": "on",
+  "score": 1,
+  "supported": false,
+  "note": "Hedges that sources do not say, then infers the scan must keep going past empty slots until the real end; the empty-slot skipping and currentTuple reset are not in the supplied sources, and the answer only vaguely touches both criteria."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "operator_lifecycle.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Gives the open-next-close protocol with exhaustion signal and resource cleanup, but omits that true means a tuple is available through getOutput, which is the 'reading each result' step the question asks about and is in Chunk 676."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "late_rows.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains late materialization, recording qualifying positions in a page-indexed offset map while scanning the filter column instead of fetching the other column immediately, and deferring tuple reconstruction; both criteria met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "pull_direction.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Correctly describes pull-based control flowing down via next() and single tuples flowing up through Project/Select/TableScan; omits only the filter-may-pull-several detail, which the sources do not contain."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "sort_blocking.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Describes non-blocking operators emitting per tuple and sort needing all input in a buffer before output; filter is addressed generically but the contrast is correct and sourced from chunk 736."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "extendible_split.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Gets the d' < d no-resize case right but the d' = d doubling condition is never stated clearly, only a muddled phrase about pointers covering more prefixes."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "text_storage.casual_a.A",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Declines to answer; the rationale for text serialization is genuinely absent from these sources, but neither criterion is met and the null-terminator aside does not address the question."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "sort_blocking.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains sort must see every tuple before emitting, buffers input as a pipeline breaker, and contrasts with non-blocking SelectionOperator, matching Chunk 736."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "few_columns.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Row store forces reading adjacent discarded columns and column store reads only the needed attribute, matching Chunk 759."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "page_io.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Covers the fixed initiation/seek cost, OS blocks, and the page amortizing that cost so nearby data is served from memory."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "hash_growth.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Load factor and probe-chain growth are covered, and it says a new table must be built and entries reinserted, but it never explains that the capacity change alters key placement and it leans on tombstones for the rebuild reason."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "shared_readers.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Shared read mode for many readers and exclusive write mode that waits for all holders, directly from chunk 643."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "batch_processing.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Amortized function-call cost, cache locality from tight loops over contiguous arrays, and SIMD are all stated and match Chunk 819."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "timestamp_deltas.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Describes storing the first timestamp in full plus small deltas, reconstructing by successive addition, and the space saving from small deltas; matches Chunks 796/798/799."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "extendible_split.casual_a.A",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Honest abstention: the supplied sources contain nothing on extendible hashing, local or global depth, or directory doubling, so neither criterion is met and the answer cannot score above 0."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "column_writes.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains column reads for reports and that an INSERT appends to every column file, naming write amplification and OLTP unsuitability per Chunk 786."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "sort_blocking.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Filter outputs on each matching tuple; sort must consume and store all input to know the minimum before emitting, per chunks 736/681."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "tagged_values.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Names the FieldType tag and data_length byte count for variable-length strings, plus the null terminator detail, all in Chunks 442, 444 and 449."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "extendible_split.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Correctly states the easy split when local depth is below global depth and the directory doubling when they are equal, with the Bucket C example from the sources."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "move_output.casual_b.B",
+  "arm": "on",
+  "score": 0,
+  "supported": true,
+  "note": "Answers with the next/getOutput split and never mentions move semantics or the moved-from state, so neither criterion is addressed."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "shared_readers.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Readers share the lock because reading does not modify data; a writer needs exclusive mode and waits until no holder in any mode, per Chunk 643."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "page_io.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains I/O latency, fixed-size blocks, buffering amortization, and the page unit serving later nearby reads from memory."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "move_output.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Both criteria met: cheap move instead of deep copy, and the source left valid but empty and overwritten on the next successful next() call, directly from Chunk 709."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "mismatched_probing.casual_a.A",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Misreads the question as table-full insertion failure and never addresses the insert/lookup probe-sequence mismatch or linear lookup stopping at an empty slot."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "deleted_hash_slot.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains that an empty slot stops lookup and breaks the chain and that a tombstone makes lookup continue, but omits that insertion can reuse a tombstone slot (Chunk 578)."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "flexible_rows.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Explains why the fixed struct fails and that a flexible structure is needed, but does not state the mechanism (runtime collection of fields with varying types), leaving criterion 1 unmet."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "tagged_values.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Type tag criterion met, but the length criterion is only half met: it attributes knowing where a string ends to the null terminator rather than to the data_length field written with the data, which Chunks 449, 495 and 534 describe."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "text_storage.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Gives inspectability/teaching rationale and the CPU and space tradeoff with the 42 versus 123456789 example showing text is not uniformly smaller."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "late_rows.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Records qualifying positions in a page-keyed pageOffsetMap during the filter scan and then fetches only the needed aggregate values, matching chunk 780."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "physical_independence.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains physical data independence via unchanged method signatures and the application working only on logical Page/Tuple/Field objects, matching Chunk 536."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "batch_processing.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Gives amortized function call overhead over 1,024 values, cache locality from tight loops over contiguous arrays, and SIMD, all from Chunk 819."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "pull_direction.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes the downward chain of next calls from the root but never explains the data returning upward or a filter pulling several child tuples."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "timestamp_deltas.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Stores the first timestamp in full plus small deltas, notes deltas fit in fewer bits, and reconstructs by successive addition, matching Chunks 796 and 798."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "physical_independence.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States that only Page::write/deserialize bodies change behind unchanged signatures while the application keeps using Page/Tuple/Field, matching Chunk 536."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "move_output.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Identical to r074: cheap move explained, moved-from state and replacement on next() omitted despite being in Chunk 709."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "late_rows.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly names late materialization and passing positional information, but does not describe recording page offsets in the filter scan or using them to fetch aggregate values grouped by page."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "operator_lifecycle.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Same open/next/false/close description as r028 with no mention of true signalling output available via getOutput."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "sort_blocking.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Correctly classifies Selection as non-blocking (tuple-by-tuple) and Sort as blocking because it cannot order any tuple until it has consumed all input; matches Chunks 681/737."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "hash_ranges.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that hash indexes are unordered so a range cannot be walked from a start point, that a range query degrades to O(N) scanning, and that an ordered B+ tree gives O(log N + k); both criteria met."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "extendible_split.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains the easy split when local depth is below global depth but never states the local-equals-global case that forces directory doubling, which Chunks 618 and 620 supply."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "column_writes.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that one insert must write a value into every separate column file so one logical write becomes many physical writes, inferable from chunks 765/785."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "page_capacity.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Lists page header, tuple overhead and internal fragmentation exactly as Chunk 482 does."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "hash_growth.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Load factor, collisions, and probe length are covered, but the resize explanation never says the hash depends on capacity or that the rebuild blocks operations, so the pause is not explained."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "pipeline_latency.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Defines materialization as writing full intermediate results before the next stage starts and contrasts pipelining avoiding the write-then-reread I/O, matching Chunk 679."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "sort_blocking.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Selection emits each qualifying tuple immediately while Sort must consume and buffer all input before knowing the minimum, per Chunk 736."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "scan_empty_slots.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explicitly says the scan does not stop at empty slots, advances across pages to the next valid record, and returns false once all pages are exhausted."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "mismatched_probing.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly answers yes and identifies the quadratic-insert versus linear-lookup mismatch, but only vaguely hedges that the search 'might not follow' the sequence and never explains that a linear lookup can hit an empty slot and stop early."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "mismatched_probing.casual_b.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly states lookup must retrace the insertion probe path and identifies the quadratic-insert versus linear-lookup mismatch, but never explains the failure mechanism (linear probe hits an empty slot and stops before the key)."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "flexible_rows.casual_a.B",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Only restates the fixed-struct problem and claims the sources give no mechanism, although Chunk 489 describes Tuples holding a collection of Field objects; neither criterion met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "batch_processing.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortizing per-call overhead across a batch, instruction/data cache locality from tight loops over contiguous arrays, and SIMD enablement; all in Chunk 819."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "shared_readers.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Shared read mode for multiple readers because reading does not change data, and exclusive write mode that must wait for all readers and writers; both criteria met."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "physical_independence.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Names physical data independence, the Page abstraction barrier, unchanged deserialize signature, and the application's use of the logical tuple model."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "flexible_rows.casual_a.B",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Only restates the fixed-struct limitation and claims the sources do not give the mechanism, though chunk 489 names the Tuple-as-collection-of-Field design; neither criterion is met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "pipeline_latency.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Describes materialization writing each full result to a temp buffer before the next operator and pipelining's very low latency to first tuple, from Chunks 679 and 680."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "hash_ranges.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "States that a hash index has no inherent order so a range needs an O(N) scan, and that the ordered B+ tree does O(log N + k), matching Chunk 598."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "pull_direction.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Covers recursive next calls down the tree but only mentions passing a result up in passing and omits that a filter may consume multiple child tuples."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "move_output.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Move avoids deep copies at pointer-copy cost, leaves the source valid but empty, and the next successful next() overwrites it, matching Chunk 709."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "sort_blocking.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Contrasts the non-blocking SelectionOperator with the SortOperator that must buffer every input tuple before emitting, per Chunk 736."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "batch_processing.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Both criteria met: amortized function-call overhead per 1,024-value batch, plus cache locality on contiguous arrays and SIMD, all from Chunk 819."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "batch_processing.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Amortized call overhead across the batch, cache locality, and SIMD are all present and match chunk 819."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "column_writes.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains an insert must append to every column file and names write amplification making column stores poor for small transactional writes, per Chunk 786."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "timestamp_deltas.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Base timestamp plus deltas, reconstruction by cumulative addition, and the far-fewer-bits storage of deltas are all stated and supported by Chunks 796/798/806."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "shared_readers.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Same content as r126 with both shared read mode and exclusive write mode waiting on all holders; both criteria met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "few_columns.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains row layout drags unrelated columns along and that column storage reads only the needed columns, reducing I/O."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "batch_processing.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortized function-call overhead per batch, cache locality from tight loops over contiguous arrays, and SIMD enablement, per chunk 819."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "page_capacity.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains the floor (a fractional record cannot be stored) and notes that headers or metadata further reduce usable space, both grounded in Chunk 485."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "deleted_hash_slot.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Distinguishes a never-used empty slot that stops lookup from a tombstone that must be probed past so later colliding keys remain reachable, per Chunk 578."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "move_output.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Explains cheap ownership transfer via std::move accurately but omits the moved-from state and replacement of currentTuple on the next successful next call."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "pipeline_latency.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Materialization writes each full result to temp files before the next operator runs, while pipelining streams rows up immediately and avoids the intermediate writes, per Chunks 679 and 676."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "late_rows.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Names late materialization and shared positions but never describes collecting qualifying offsets during the filter scan or using them to fetch aggregate values grouped by page."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "late_rows.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Names late materialization, describes recording positions in a page-keyed offset map while scanning the filter column, then fetching aggregate values by those positions, matching Chunks 778 and 780."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "sort_blocking.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Selection is non-blocking per tuple while Sort must consume its entire input before the first output, matching chunks 681 and 737."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "timestamp_deltas.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Identical to r052: base timestamp plus deltas, cumulative-sum reconstruction, fewer bits for small deltas."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "mismatched_probing.casual_b.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "States lookup must retrace the exact insertion probe path and cites the quadratic vs linear formula mismatch, but never explains the failure mode (linear lookup hitting an empty slot before reaching the quadratically placed key)."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "move_output.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Move transfers ownership at pointer-copy cost instead of deep copying, and the moved-from currentTuple stays valid but empty until the next successful next call overwrites it; both criteria met."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "page_io.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Covers fixed I/O latency and OS/hardware blocks, then page-level amortization with later reads served from memory, matching Chunk 471."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "late_rows.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Describes recording positions in a page-indexed pageOffsetMap and a second phase that fetches aggregate values by those positions, per chunk 780."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "page_capacity.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Covers the floor/whole-record point but only vaguely says the formula ignores overhead without identifying page or tuple metadata."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "page_capacity.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains the floor (only whole records fit, leftover fragment wasted) and notes header/metadata overhead further reduces usable space, consistent with Chunk 485."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "pull_direction.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States the pull-based model, the chain of next calls down to the scan, and the tuple passing back up through each operator to the client, matching Chunks 674/675/812."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "page_io.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "High fixed transfer latency, OS block reads, and the DBMS page amortizing cost so nearby reads come from memory, all drawn from Chunks 467 and 471."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "physical_independence.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Same correct physical-data-independence answer: stable deserialize signature, unchanged Page/Tuple/Field consumers."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "timestamp_deltas.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Stores base timestamp plus small deltas, reconstructs by cumulative addition, and notes deltas fit in far fewer bits, all from Chunks 796 and 798."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "hash_ranges.casual_b.B",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Answers a different question (deletion breaking probe chains) and never says hashing destroys key order or that a range needs a scan or ordered index."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "text_storage.casual_a.A",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Says the sources do not explain the text format (true for this packet) and then discusses unrelated page I/O; neither criterion is met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "scan_empty_slots.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": false,
+  "note": "Reaches the right conclusion for criterion 1 only as a hedged guess ('would likely be handled'), says nothing about the end-of-table signal, and the empty-slot behaviour is not in the supplied chunks, so the key claim is unsupported speculation."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "operator_lifecycle.casual_b.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Covers true meaning a tuple is ready via getOutput and mentions open, but hedges on false meaning exhaustion (the sources indeed do not state it explicitly) and never mentions close releasing resources."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "physical_independence.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains physical data independence via the stable Page interface and logical Tuple model, and the added logical independence point is supported by Chunk 538."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "pipeline_latency.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Materialization writes whole intermediate results before the next operator starts while pipelining passes tuples straight up with very low first-tuple latency, per chunks 679/680."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "pull_direction.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says the model is pull-based and demand-driven from the top, but never describes the recursive next() calls down to children, tuples flowing up through filter and projection, or a filter pulling several child tuples."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "text_storage.casual_a.A",
+  "arm": "on",
+  "score": 0,
+  "supported": true,
+  "note": "Answers a different question (why serialize to pages for persistence) and never addresses readability, debuggability, or the parsing/space cost of text."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "scan_empty_slots.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes currentTuple reset to nullptr as the end signal but never directly says empty slots are skipped rather than ending the scan."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "hash_ranges.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Grader report: gives O(N) cost and ordered B+ tree alternative but never states that hashing does not preserve key order (score taken from the grader summary; the file omitted this id)."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "move_output.casual_b.B",
+  "arm": "on",
+  "score": 0,
+  "supported": true,
+  "note": "Never mentions move semantics or ownership transfer and misplaces replacement at getOutput, so neither criterion is met; the needed Chunk 709 was not supplied."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "few_columns.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that a row scan drags along adjacent unneeded columns and that column files let the query read only the needed attributes, reducing I/O, per Chunk 759."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "operator_lifecycle.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Describes looping on next() until it returns false, but omits open, getOutput, and close, so each criterion is only half covered."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "small_integer_bits.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Frame-of-reference subtraction of the minimum and bit-packing are correct, but the answer never explains recovery by unpacking and adding the minimum back, which the question asks for."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "few_columns.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that row storage drags unrelated columns along on every read while column storage reads only the needed attribute(s), reducing I/O; matches Chunk 759."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "column_writes.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains an insert must append to every column file and names write amplification making column stores poor for frequent small transactional writes; both criteria met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "move_output.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "States move transfers ownership cheaply versus deep copying and that the source is left valid but empty until overwritten on the next successful next(), per Chunk 709."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "page_io.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains block-based hardware/OS I/O, the expensive initial read, and that a whole page amortizes the fixed cost so nearby reads come from memory, per chunk 471."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "column_writes.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States that an insert appends to every column file and that one logical write becomes many physical writes (write amplification), consistent with Chunk 786."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "hash_ranges.casual_b.A",
+  "arm": "on",
+  "score": 0,
+  "supported": true,
+  "note": "Misreads the range question as a probe-chain/tombstone question; never says hashing destroys key order or that a range needs a scan or an ordered index."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "tagged_values.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Identifies FieldType as the type tag and data_length as the byte count for variable-length strings, matching Chunks 442/444."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "page_io.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Covers fixed latency of initiating transfers, the page as I/O unit, and amortization serving nearby data from memory; labeling the page load 'buffering' is a minor conflation, not a material error."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "page_capacity.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Conveys that only a whole record fits so a small leftover is unusable, but says nothing about page or tuple metadata consuming the space, and the sources lacked that content."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "page_capacity.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Names internal fragmentation with the 30-byte versus 40-byte example and notes header and tuple metadata overhead, matching Chunk 482."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "hash_growth.casual_b.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains that key % capacity changes placement so every key must be rehashed and reinserted, but does not address collisions and probe lengths growing with occupancy."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "text_storage.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Both criteria are touched (debuggability for learning, CPU parsing cost and space), but the space example is garbled: it cites 101 taking 3 bytes as text vs 4 in binary as proof of waste, dropping the large-number half that actually shows text is not uniformly compact."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "pipeline_latency.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Describes materialization as finishing and buffering each operator's full output before the next starts, and pipelining as passing each tuple straight up so the first result appears almost instantly; matches Chunks 679/680/676."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "tagged_values.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "FieldType tag tells the engine how to interpret the bytes and data_length gives the byte count needed for variable-length strings; both criteria met and matches Chunks 442, 444 and 496."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "batch_processing.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Gives amortized function call overhead over a batch plus instruction/data cache locality and SIMD enablement, all from Chunk 819."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "timestamp_deltas.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Base timestamp plus small deltas, fewer bits per delta, and reconstruction by successive addition, per chunks 796/798."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "late_rows.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly names late materialization and positional linkage but never says positions are recorded while scanning the filter column and then used to fetch aggregate values page by page, which Chunk 773 supports."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "tagged_values.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Names the type tag and data_length written by Field::serialize and the null terminator for strings, matching Chunks 495 and 449."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "operator_lifecycle.casual_b.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Gets the true/false meaning of next right but omits open, getOutput, and close releasing resources even though Chunk 722 supplied them."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "few_columns.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Row scan reads and discards unneeded columns while column files allow reading only the needed ones; the write-amplification caveat is backed by Chunk 786."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "physical_independence.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Same correct answer: serialization logic changes behind a stable interface and the application works on logical Page/Tuple/Field objects."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "move_output.casual_b.A",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Answers with the next()/getOutput() separation, which is in Chunk 724 but is not the move-semantics explanation the criteria require, so neither criterion is met."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "scan_empty_slots.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly covers the end-of-scan nullptr reset and the false return, but never states that empty slots are skipped rather than treated as end of table."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "physical_independence.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Data independence with the Page class as abstraction barrier; application code keeps using Tuple/Field objects while serialize/deserialize bodies change, per Chunks 517 and 536."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "pipeline_latency.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Both criteria are covered, but the final paragraph misattributes the getOutput buffer-reuse optimization (Chunk 671, which is about per-tuple allocation) to avoiding buffering the whole result set, a minor error."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "flexible_rows.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Describes moving from a compile-time struct to a runtime general-purpose container of type-carrying values so tables can have varying columns and types without recompiling; both criteria met at the level of abstraction the sources use."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "page_io.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains block-based I/O to overcome latency and that a page amortizes the cost so nearby data is served from memory."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "shared_readers.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Readers share a lock because reading does not change data; a writer needs exclusive mode and waits for all holders, per chunk 643."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "page_capacity.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Only says the spare bytes are not enough for a full record; it never mentions header or tuple metadata and hedges the whole explanation as a suggestion."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "hash_growth.casual_b.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Fully explains that key % capacity changes so entries must be rehashed, but criterion 1 (occupancy raising collisions and probe lengths) is not touched."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "hash_ranges.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "States hashing scrambles key order and ranges are slow, but only vaguely says records are scattered and never explains that a range needs a scan or that an ordered index fits better."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "physical_independence.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Physical data independence via unchanged Page::deserialize signature and application code working on Tuple/Field objects, plus logical independence via views, all in Chunks 536-538."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "page_io.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains fixed-size blocks, the high initial disk cost amortized by buffering, and the page serving later nearby requests from memory."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "page_io.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Covers fixed-cost block I/O by hardware and OS, and the page amortizing that cost so nearby requests are served from memory, per Chunk 471."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "shared_readers.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Shared read mode and exclusive write mode that waits for all holders, straight from chunk 643."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "hash_growth.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains key % capacity changes placement so every entry must be rehashed and reinserted, but does not address the collision/probe-length motivation in the first criterion."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "hash_growth.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Covers probe chains, tombstones and load factor, and explains that restoring performance requires building a new larger table and reinserting all valid data; matches Chunks 580/601."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "late_rows.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Names late materialization and shared positional offsets, but stays generic: it never says positions are recorded while scanning the filter column and then used to fetch aggregate values, which Chunk 773 in its own sources states."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "pull_direction.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes the top-down pull of next() calls but never describes the data path back up through Select and Project, so the round trip is only half answered."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "deleted_hash_slot.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains that an emptied slot ends the probe and breaks B's chain and that a tombstone keeps lookups probing, but omits that insertion may reuse the tombstone slot."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "few_columns.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that row storage drags unrelated columns along and column storage reads only the needed columns, matching Chunks 759 and 790."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "flexible_rows.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Explains that a vector of fields allows a variable number of columns, but says nothing about heterogeneous field types or avoiding recompilation."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "few_columns.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains row layout reads unneeded columns and column layout reads only the needed columns to cut I/O, matching Chunk 759."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "hash_ranges.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explicitly says hash indexes are not ordered so no start point plus sequential read is possible, range costs O(N), and a sorted B+ tree is the suitable structure."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "shared_readers.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Describes shared read mode for many readers and exclusive write mode that must wait for all holders, matching Chunk 643."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "scan_empty_slots.casual_b.B",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Declines to answer and pads with an irrelevant pageOffsetMap reference, meeting neither criterion, although the supplied chunks do not actually state the empty-slot skipping rule."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "shared_readers.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Shared read mode for concurrent readers and exclusive write mode that waits until no holder remains, matching chunks 643 and 646."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "batch_processing.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Amortized call overhead with the 1,024 example, locality of reference, and SIMD; both criteria met per Chunk 819."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "page_io.casual_b.B",
+  "arm": "on",
+  "score": 0,
+  "supported": true,
+  "note": "Misreads the question as vectorized CPU processing and answers about function-call amortization and SIMD; disk latency, blocks and page-level amortization are never mentioned, so the core answer is wrong even though its statements come from Chunk 819."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "page_capacity.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Vaguely cites overhead that consumes space and the used_size check, but never names header or tuple metadata and never states that a leftover fragment smaller than one record is unusable, so neither criterion is clearly met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "mismatched_probing.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Identifies the quadratic-insert versus linear-lookup mismatch but only says lookup follows a 'different sequence' without the empty-slot stop that actually loses the key."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "small_integer_bits.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Covers subtracting the minimum (frame of reference) but never explains packing with only enough bits for the range into a byte or word, or restoring by adding the minimum back."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "deleted_hash_slot.casual_b.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly contrasts an empty slot stopping lookup with a tombstone forcing continued probing, but omits that insertion may reuse a tombstone slot, which Chunk 578 states and the criterion requires."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "physical_independence.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Describes physical data independence via unchanged Page::deserialize signatures and applications working only on logical Page/Tuple/Field objects, per Chunk 536."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "hash_ranges.casual_b.A",
+  "arm": "on",
+  "score": 0,
+  "supported": true,
+  "note": "Misreads the question as probe-chain traversal and tombstones; never says hashing destroys key order or that ranges need a scan."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "few_columns.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Same answer as r084: row store reads adjacent discarded columns, column store reads only the required attribute, per Chunk 759."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "physical_independence.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States Page as abstraction barrier, unchanged deserialize signature, and application code operating only on Tuple/Field objects."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "text_storage.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Readability for learning and parsing overhead are covered, but the space point is muddled: it presents the 101 example (3 bytes text versus 4 binary) as evidence of waste when it shows the opposite, and omits the large-number case."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "hash_growth.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains longer probe chains and collisions as the table fills and the stop-the-world rehash because key % capacity changes with the new size, matching chunks 580, 601, 613, and 614."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "pull_direction.casual_b.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Describes the demand-driven pull propagating down and the tuple coming back up, but never says a filter may request several child tuples before returning one (that chunk was not supplied)."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "column_writes.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Same answer as r017: one record requires a separate write to each column file versus a single contiguous row-store write; consistent with Chunks 765/785."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "physical_independence.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Physical data independence: only serialize and deserialize bodies change behind unchanged signatures while the application keeps working on Page, Tuple and Field objects; both criteria met."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "pipeline_latency.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Contrasts materialization writing whole intermediate results before the next operator with pipelining returning the first tuple as soon as it traverses the operators, per Chunks 679 and 680."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "pipeline_latency.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Identifies materialization writing full intermediate results and re-reading them as wasted I/O, and that pipelining flows data on without writing out between stages, per chunk 679."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "text_storage.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Gives readability for inspection, debugging and learning as the gain, and parsing overhead plus space costs (with the 42 vs 123456789 example) as the loss, from Chunks 495 and 502."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "mismatched_probing.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says lookup must retrace the insertion probe path and identifies the quadratic vs linear mismatch, but does not explain that the linear search stops at an empty slot before reaching the farther key."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "shared_readers.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains shared read mode for concurrent readers and exclusive write mode that waits for all holders, matching Chunk 643."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "extendible_split.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes the easy split when local depth is below global depth, but never covers the equal-depth case that forces directory doubling even though Chunk 618 supplies it."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "operator_lifecycle.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Describes only the next() loop and false at exhaustion; open, getOutput, and close releasing resources are all missing (those chunks were not supplied)."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "hash_growth.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Fully explains that key % capacity changes with capacity so entries must be rehashed and reinserted, but the frozen criterion about load factor raising collisions and probe lengths is not addressed."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "operator_lifecycle.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly ties next() true to getOutput() and mentions open() allocating the buffer, but hedges on false meaning exhaustion and never mentions close releasing resources."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "text_storage.casual_a.B",
+  "arm": "off",
+  "score": 0,
+  "supported": true,
+  "note": "Same as r160: declines to explain the text format rationale and neither criterion is met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "timestamp_deltas.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Same answer as r137: base value plus small deltas, cumulative addition to reconstruct, and fewer bits per delta; supported by Chunks 796/798/806."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "shared_readers.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Shared read mode for concurrent readers and exclusive write mode that waits until no thread holds the lock in any mode; both criteria met."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "page_capacity.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Names page header overhead and internal fragmentation with the 4096/42 and 24-byte header worked numbers matching Chunks 485 and 486."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "extendible_split.casual_a.A",
+  "arm": "on",
+  "score": 0,
+  "supported": true,
+  "note": "Does not answer the extendible-hashing directory question (local versus global depth); the supplied sources indeed lack that content, but the result is a non-answer meeting neither criterion."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "pipeline_latency.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States that materialization completes and writes each operator's full result before the next starts and that pipelining returns the first tuple as soon as it passes through, from Chunks 679 and 680."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "text_storage.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Gives inspectability and debuggability as the gain and parsing speed plus storage space as the cost with both the 42 and 123456789 examples, per Chunks 495 and 502."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "small_integer_bits.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes subtracting the minimum and bit-packing with minimal width but does not explain recovery by unpacking and adding the minimum back."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "shared_readers.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Shared read mode for non-modifying readers and exclusive write mode that waits for all holders, matching Chunk 643."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "move_output.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains std::move avoids deep copies and transfers ownership cheaply, leaving a valid-but-empty source that the next successful next() overwrites, per Chunk 709."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "pull_direction.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Pull-based control flow from the root down is correct, but the upward data flow is described only generically and the point that a filter may pull several child tuples before returning is missing (Chunk 676 was not supplied)."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "page_capacity.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Vaguely attributes the shortfall to overhead and page management via the addTuple check but never names header or metadata specifically and omits the leftover-fragment point."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "tagged_values.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Covers data_length for variable-length values but only vaguely says the system must maintain type information, never naming a type tag."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "pull_direction.casual_b.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes the demand-driven request propagating from the root down and the tuple returning up (Chunk 667), but does not mention that a filter may pull several child tuples before returning one, so criterion 2 is only partly touched."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "deleted_hash_slot.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains that an emptied slot breaks the probe chain and that a tombstone makes lookup continue, but omits that insertion can treat the tombstone as empty and reuse it, leaving criterion 2 half met."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "text_storage.casual_a.B",
+  "arm": "on",
+  "score": 0,
+  "supported": true,
+  "note": "Refuses, saying the sources do not explain the text-format choice; the supplied chunks indeed lack that passage, but a refusal meets neither criterion."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "pipeline_latency.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Materialization runs each operator to completion into a buffer before the next, while pipelining returns the first tuple almost instantly, per chunks 679/680."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "small_integer_bits.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes subtracting the minimum and bit-packing with minimal bits, but never explains recovery by unpacking and adding the minimum back, which the question explicitly asks."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "batch_processing.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Covers instruction/data cache locality from tight loops over contiguous arrays, SIMD, and amortized function call overhead, all in Chunk 819."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "small_integer_bits.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes frame of reference subtraction and bit-packing but never explains how values are restored by adding the minimum back."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "scan_empty_slots.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Describes the end-of-scan false signal from the reset page pointer, but never says empty slots are skipped rather than treated as end of table, leaving criterion 1 essentially unanswered."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "pull_direction.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Gives the demand-driven downward propagation correctly but stays generic, never naming next() on the root or that a filter may pull several child tuples before returning."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "flexible_rows.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains moving from a fixed struct to a runtime container of typed values that handles varying column counts and types without recompiling, matching Chunks 424 and 436."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "flexible_rows.casual_b.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Gives the variable number of columns from the vector of fields, but omits that fields carry different types and that changing the table no longer requires recompiling, and wrongly opens by saying the sources do not directly address the question."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "late_rows.casual_a.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Names late materialization and shared positions/implicit offsets correctly, but does not describe recording qualifying offsets during the filter scan or fetching aggregate values grouped by page."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "small_integer_bits.casual_b.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Explains frame-of-reference subtraction of the minimum well, but only names bit-packing without explaining packing into the minimum bits for the range or restoring by adding the minimum back, so criterion 2 is largely unmet despite Chunk 800 containing it."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "deleted_hash_slot.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains the broken probe chain and that lookup continues past a tombstone, but like r258 omits that insertion may reuse the tombstone slot, so criterion 2 is only half met."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "small_integer_bits.casual_a.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes frame-of-reference subtraction and bit-packing but states recovery adds the minimum back before unpacking the bits, reversing the required order."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "column_writes.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Column layout reads only needed columns for reports, but an insert appends to every column file (write amplification), unlike a row store, per chunks 759/786."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "column_writes.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "States that an insert writes to every column file and that one logical write becomes many physical writes unsuited to OLTP, matching Chunk 786."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "few_columns.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that a row layout drags unrelated columns along and a column layout reads only the needed attribute files, reducing I/O, per Chunks 759 and 790."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "sort_blocking.casual_a.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Contrasts tuple-by-tuple non-blocking selection with a sort that must see every element to know the smallest, matching Chunk 737."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "batch_processing.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Batch amortizes function-call overhead and tight loops over contiguous arrays improve cache locality and enable SIMD, matching Chunk 819."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "page_io.casual_b.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Identical to r097: I/O latency, blocks, buffering amortization, and page unit serving later nearby reads from memory."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "pull_direction.casual_a.B",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "Control pull and upward data flow are correct, but it never states that the Select operator loops and requests further child tuples when the predicate fails, even though Chunks 676 and 734 were supplied."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "flexible_rows.casual_b.B",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that a runtime vector of Field objects allows varying numbers and types of fields and avoids changing code and recompiling, matching chunk 531."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "sort_blocking.casual_b.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Contrasts the non-blocking SelectionOperator with the SortOperator that must buffer all input before emitting the minimum; both criteria met per Chunk 736."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "operator_lifecycle.casual_a.B",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Gives open, repeated next with a false completion signal, and close for cleanup, but omits that true means a tuple is available via getOutput, the 'reading each result' step present in Chunk 676."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "mismatched_probing.casual_b.A",
+  "arm": "on",
+  "score": 1,
+  "supported": true,
+  "note": "States that lookup must retrace the insertion probe path and quotes the mismatched insertOrUpdate and getValue formulas, but never explains the failure mechanism (linear lookup hits an empty slot and stops before the quadratically placed key)."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "deleted_hash_slot.casual_a.A",
+  "arm": "off",
+  "score": 2,
+  "supported": true,
+  "note": "Explains that an emptied slot makes lookup stop early and break the probe chain while a tombstone forces lookup to continue probing, per Chunks 577 and 578; insertion reuse is omitted but the lookup fix is fully covered."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "operator_lifecycle.casual_b.A",
+  "arm": "off",
+  "score": 1,
+  "supported": true,
+  "note": "Gets next() true plus getOutput() right but hedges on false meaning exhaustion and never mentions open-then-loop or close releasing resources."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_b-k4",
+  "reviewId": "late_rows.casual_b.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Describes recording positions in pageOffsetMap during the filter scan and then reading each aggregate page once and indexing by offsets, matching Chunks 780 and 782."
+ },
+ {
+  "run": "fix-engine",
+  "cell": "casual_a-k4",
+  "reviewId": "mismatched_probing.casual_a.B",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Says insertion and lookup must agree, and traces the 5-6-9 vs 5-6-7 example where the linear search hits an empty slot and wrongly stops, matching Chunk 592."
+ },
+ {
+  "run": "pr-engine",
+  "cell": "casual_a-k8",
+  "reviewId": "hash_growth.casual_a.A",
+  "arm": "on",
+  "score": 2,
+  "supported": true,
+  "note": "Attributes slowdown to collisions and longer probe chains (via tombstones) and explains rehashing recomputes every key for the new capacity as a stop-the-world rebuild, matching Chunks 580/613/614."
+ }
+]

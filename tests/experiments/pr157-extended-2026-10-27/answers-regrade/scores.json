@@ -1,0 +1,1802 @@
+{
+ "e000": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly names the standard iterator interface but never states the open/next/getOutput protocol the criteria require."
+ },
+ "e015": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers about full scans, not that hashing does not preserve order or that ranges need scanning."
+ },
+ "e030": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says empty slots are skipped but omits the end-of-scan currentTuple null signal."
+ },
+ "e045": {
+  "score": 0,
+  "supported": true,
+  "note": "Discusses columnar CPU bottleneck rather than the flexible runtime Field/Tuple model the criteria expect."
+ },
+ "e060": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains row scan reads whole table versus column store reading only filter and aggregate columns, matching sources."
+ },
+ "e075": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers packing with minimum bits per range but omits the subtract-the-minimum offset step and unpacking."
+ },
+ "e090": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains moving to next page after the inner loop ends but does not state that empty slots are skipped or that exhaustion nulls currentTuple."
+ },
+ "e105": {
+  "score": 0,
+  "supported": false,
+  "note": "Says sources do not compare memory use and never covers materialization versus pipelining."
+ },
+ "e120": {
+  "score": 1,
+  "supported": true,
+  "note": "Captures that the filter pulls another tuple, but wrongly calls TableScan the parent of Select."
+ },
+ "e135": {
+  "score": 1,
+  "supported": false,
+  "note": "Describes extendible hashing generally but omits the local versus global depth rules for when the directory doubles."
+ },
+ "e150": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortized call overhead, locality of contiguous loops and SIMD, all supported by the source."
+ },
+ "e165": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct I/O block amortization explanation but not the vectorization overhead, locality and SIMD criteria."
+ },
+ "e180": {
+  "score": 0,
+  "supported": true,
+  "note": "Gives a generic hash-index jump-directly answer and says nothing of directory or depth."
+ },
+ "e195": {
+  "score": 0,
+  "supported": false,
+  "note": "Attributes blocking steps to full scans rather than sort or aggregation needing all input."
+ },
+ "e210": {
+  "score": 2,
+  "supported": true,
+  "note": "States lookup must use the same probe sequence as insertion and that a mismatched linear probe fails, per the mismatched probing source."
+ },
+ "e225": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortized call overhead, contiguous-data locality and SIMD parallelism."
+ },
+ "e240": {
+  "score": 0,
+  "supported": true,
+  "note": "Says the sources do not cover it and misses the readable-text versus CPU/space trade-off in the supplied text-format source."
+ },
+ "e255": {
+  "score": 1,
+  "supported": true,
+  "note": "Says lookup follows the probe sequence but does not mention the linear versus quadratic mismatch stopping early."
+ },
+ "e270": {
+  "score": 0,
+  "supported": true,
+  "note": "Fails to identify type tag and byte length and answers with unrelated data independence and pageOffsetMap content."
+ },
+ "e285": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct that false signals exhaustion but omits the open/getOutput protocol and close releasing resources."
+ },
+ "e300": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains fixed-size waste and the 8 bytes to 1 byte example but not the subtract-minimum and bit-packing technique."
+ },
+ "e315": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly identifies open as the first step but does not cover the next loop, getOutput or close."
+ },
+ "e330": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains empty slots terminate lookup while tombstones continue probing and are reusable per the sources."
+ },
+ "e345": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains hash destroys locality and range queries need visiting every bucket, though it does not mention an ordered index."
+ },
+ "e001": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers page header and tuple metadata plus internal fragmentation of a leftover too small for a tuple."
+ },
+ "e016": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains tombstones treated as occupied but omits empty-slot termination and insertion reuse of tombstones."
+ },
+ "e031": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly states Tuple/Field logical interface is decoupled from physical storage, which can change without app changes."
+ },
+ "e046": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes buffering whole input in a blocking sort but only lightly touches pipelining benefits (I/O, early first results)."
+ },
+ "e061": {
+  "score": 0,
+  "supported": true,
+  "note": "Says sources do not cover it and never addresses text readability versus parsing/space cost tradeoff."
+ },
+ "e076": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains collisions and probe length growth but omits that resizing forces rehashing/reinserting entries."
+ },
+ "e091": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly describes pageOffsetMap of page-keyed offsets used to fetch aggregate values without row reconstruction."
+ },
+ "e106": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains empty slot breaking probe chain but does not state tombstones allow insertion reuse."
+ },
+ "e121": {
+  "score": 1,
+  "supported": true,
+  "note": "Identifies extendible hashing directory growth but gives none of the local/global depth split-versus-double logic."
+ },
+ "e136": {
+  "score": 0,
+  "supported": true,
+  "note": "Wrongly says materialization is not slower for first rows, contradicting the sources' low first-tuple latency advantage of pipelining."
+ },
+ "e151": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers close releasing resources and next returning false but omits open and getOutput parts of the lifecycle."
+ },
+ "e166": {
+  "score": 1,
+  "supported": true,
+  "note": "Describes page-boundary advance but does not state empty slots are skipped or the end-of-table null signal."
+ },
+ "e181": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains row scan drags unneeded columns while column store reads only 2/8 of data."
+ },
+ "e196": {
+  "score": 2,
+  "supported": true,
+  "note": "Names page header and internal fragmentation leftover too small for another tuple, with correct worked example."
+ },
+ "e211": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct control-down/data-up distinction but misses that a filter may pull multiple child tuples before returning."
+ },
+ "e226": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly states insertion and lookup must use identical probing and gives the mismatched linear versus quadratic example."
+ },
+ "e241": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains block-sized transfers and amortizing disk cost so nearby reads are served from memory."
+ },
+ "e256": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers with logical data independence and views, which is wrong; the unaffected part is application code via physical independence."
+ },
+ "e271": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains close teardown only, without open/next/getOutput loop or false-as-exhaustion."
+ },
+ "e286": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains Page as abstraction barrier with stable signatures and applications using logical Tuple/Field objects."
+ },
+ "e301": {
+  "score": 0,
+  "supported": true,
+  "note": "Claims sources do not cover it though chunk 708 shows getOutput moving fields out of currentTuple, leaving it moved-from."
+ },
+ "e316": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly identifies next() returning false as exhaustion but omits the open/getOutput/close lifecycle."
+ },
+ "e331": {
+  "score": 0,
+  "supported": false,
+  "note": "Refuses and discusses bit-packing instead of materialization versus pipelining memory, and sources supplied lack the relevant content."
+ },
+ "e346": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers page header, tuple metadata, and internal fragmentation of space too small for a new tuple."
+ },
+ "e002": {
+  "score": 1,
+  "supported": false,
+  "note": "Mentions sort needing all input but never states that a filter emits tuples independently, and the sort-needs-all-input claim is not in the supplied chunks."
+ },
+ "e017": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains blocking sort materializing its input, but does not state pipelining's reduced I/O and early first results."
+ },
+ "e032": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers variable columns, varying types and no recompilation when the schema changes."
+ },
+ "e047": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers about scan skipping empty slots rather than insertion and lookup sharing the same probe sequence."
+ },
+ "e062": {
+  "score": 0,
+  "supported": false,
+  "note": "Discusses page writes and rehashing, nothing about move semantics or ownership transfer."
+ },
+ "e077": {
+  "score": 0,
+  "supported": true,
+  "note": "Only says the file stores a tuple count, missing the text-readability versus CPU and space tradeoff."
+ },
+ "e092": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains fixed latency, OS blocks, amortization and in-memory reuse of pages."
+ },
+ "e107": {
+  "score": 0,
+  "supported": false,
+  "note": "Talks about deserialization creating a separate Page copy, not move semantics."
+ },
+ "e122": {
+  "score": 1,
+  "supported": true,
+  "note": "Gives data_length correctly but omits the type tag."
+ },
+ "e137": {
+  "score": 1,
+  "supported": true,
+  "note": "Describes subtracting the minimum and mentions bit-packing, but does not explain minimal-bit packing or restoring by adding the minimum, and conflates with delta encoding."
+ },
+ "e152": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains shared read mode and exclusive write waiting for all holders."
+ },
+ "e167": {
+  "score": 1,
+  "supported": true,
+  "note": "Names data independence and a standard operator interface but gives none of the open/next/getOutput/close protocol semantics."
+ },
+ "e182": {
+  "score": 1,
+  "supported": true,
+  "note": "Gives base plus deltas but not recovery by cumulative addition or compact encoding."
+ },
+ "e197": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly says no tuple is reconstructed and only positional information passes between filter and aggregate."
+ },
+ "e212": {
+  "score": 0,
+  "supported": false,
+  "note": "Abstains and discusses global locks, never giving shared readers or exclusive writers, and the sources lack that content."
+ },
+ "e227": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers header overhead and unusable leftover fragment smaller than a tuple."
+ },
+ "e242": {
+  "score": 2,
+  "supported": true,
+  "note": "Correct 7,813 versus 1,954 pages and column store reads only needed columns."
+ },
+ "e257": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers about CPU bottlenecks and persistence, missing the flexible runtime field model criteria."
+ },
+ "e272": {
+  "score": 0,
+  "supported": false,
+  "note": "Never mentions type tag or byte length and adds unsupported Conceptual/View levels."
+ },
+ "e287": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes equal-depth doubling but wrongly says local less-than-or-equal is the no-doubling case and gives no redirect detail."
+ },
+ "e302": {
+  "score": 0,
+  "supported": false,
+  "note": "Abstains and discusses unrelated hash capacity and deletion holes, no move semantics."
+ },
+ "e317": {
+  "score": 2,
+  "supported": true,
+  "note": "Accurately explains shared read mode and exclusive write mode."
+ },
+ "e332": {
+  "score": 1,
+  "supported": true,
+  "note": "Base plus deltas correct but recovery by cumulative addition is not mentioned."
+ },
+ "e347": {
+  "score": 0,
+  "supported": true,
+  "note": "Describes analytical strengths only, missing the write amplification on inserts."
+ },
+ "e003": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers close releasing resources after next returns false, but omits the open/next loop and getOutput."
+ },
+ "e018": {
+  "score": 1,
+  "supported": true,
+  "note": "Identifies logical level and contrast with physical storage, but does not state that storage changes stay behind a stable interface."
+ },
+ "e033": {
+  "score": 2,
+  "supported": true,
+  "note": "B+ tree chosen for sorted scan, hash needs external sort, matching the table and the ordered-index criterion."
+ },
+ "e048": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly corrects the premise and explains column advantages, but never touches the insert/write-amplification criteria."
+ },
+ "e063": {
+  "score": 2,
+  "supported": true,
+  "note": "Append to every column file and write amplification explained, with unsuitability for transactional workloads."
+ },
+ "e078": {
+  "score": 2,
+  "supported": true,
+  "note": "Runtime tuples with varying number and types of fields, no recompilation."
+ },
+ "e093": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains tombstones keep probe chains intact and truly empty slot ends lookup; insertion reuse not mentioned but minor."
+ },
+ "e108": {
+  "score": 2,
+  "supported": true,
+  "note": "Runtime representation carrying type info, flexible without recompilation."
+ },
+ "e123": {
+  "score": 2,
+  "supported": true,
+  "note": "Row store reads whole tuples (7,813 pages) vs column store reading only filter and aggregate columns (1,954), correct."
+ },
+ "e138": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers about memory volatility and persistence, not materialization versus pipelining."
+ },
+ "e153": {
+  "score": 0,
+  "supported": false,
+  "note": "Declines to answer and offers unrelated page discussion; criteria about runtime fields not addressed."
+ },
+ "e168": {
+  "score": 0,
+  "supported": false,
+  "note": "Discusses late materialization and access overhead instead of open/next/getOutput protocol."
+ },
+ "e183": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct on sort and aggregation as blocking, but does not contrast with filter emitting tuples independently."
+ },
+ "e198": {
+  "score": 0,
+  "supported": false,
+  "note": "Talks about full scan, hashing, column stores; misses next on root pulling recursively from children."
+ },
+ "e213": {
+  "score": 1,
+  "supported": true,
+  "note": "Describes outer loop ending but not skipping empty slots or currentTuple null signaling end."
+ },
+ "e228": {
+  "score": 1,
+  "supported": true,
+  "note": "Bit-packing explanation is correct but omits subtracting the minimum and restoring by adding it back."
+ },
+ "e243": {
+  "score": 2,
+  "supported": true,
+  "note": "Delta encoding with first timestamp stored and small deltas, correct though recovery by cumulative sum is implicit."
+ },
+ "e258": {
+  "score": 2,
+  "supported": true,
+  "note": "Late materialization with collected offsets used to locate corresponding column values without rebuilding tuples."
+ },
+ "e273": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly recommends OLTP row store, but does not give the column-store write amplification reason."
+ },
+ "e288": {
+  "score": 0,
+  "supported": true,
+  "note": "Explains blocks and pages, not recording qualifying offsets to fetch aggregate values."
+ },
+ "e303": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers about close() cleanup, not move semantics and moved-from state."
+ },
+ "e318": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains cleared marker lets empty slot end lookup and miss displaced keys; tombstone insertion reuse not stated."
+ },
+ "e333": {
+  "score": 2,
+  "supported": true,
+  "note": "Shared read mode for multiple readers and exclusive write waiting on all holders, exactly as sourced."
+ },
+ "e348": {
+  "score": 0,
+  "supported": false,
+  "note": "Discusses data independence, late materialization and SIMD instead of materialization versus pipelining."
+ },
+ "e004": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains materialization writes intermediate results and delays all output, contrasting pipelining's early first tuple."
+ },
+ "e019": {
+  "score": 1,
+  "supported": true,
+  "note": "Sort criterion fully met but no mention that a filter can emit tuples independently."
+ },
+ "e034": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains self-describing typed Field but omits variable number of columns and the no-recompile point."
+ },
+ "e049": {
+  "score": 0,
+  "supported": false,
+  "note": "Describes columnar analytic benefits and never addresses the multi-column-file write cost for small inserts; sources lack it."
+ },
+ "e064": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly gives the local<global easy split but omits the local==global directory doubling case."
+ },
+ "e079": {
+  "score": 1,
+  "supported": true,
+  "note": "Gives currentTuple.reset() end signal but not that empty slots are skipped rather than ending the scan."
+ },
+ "e094": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly contrasts row layout loading whole rows with column layout reading only needed columns, honestly noting no 8-field calculation exists."
+ },
+ "e109": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers byte length for variable-length strings but not the type tag's role."
+ },
+ "e124": {
+  "score": 0,
+  "supported": false,
+  "note": "Says sources do not mention unusable space and discusses used_size and holes, missing metadata overhead and partial-record fragments."
+ },
+ "e139": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers with OS block I/O buffering rather than batch amortization of call overhead, tight loops and SIMD, though vectorized chunk was supplied."
+ },
+ "e154": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains full row scan reads all pages while column store reads only filter and aggregate columns."
+ },
+ "e169": {
+  "score": 1,
+  "supported": true,
+  "note": "Gives currentTuple reset as exhaustion signal but never mentions skipping empty slots."
+ },
+ "e184": {
+  "score": 0,
+  "supported": false,
+  "note": "Does not address serialization changing behind a stable Page/Tuple/Field interface and instead discusses schema flexibility."
+ },
+ "e199": {
+  "score": 2,
+  "supported": true,
+  "note": "Gives frame-of-reference minimum subtraction plus bit-packing to the range's bit width; restoration step unstated but minor."
+ },
+ "e214": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains move transfers ownership cheaply but omits moved-from state and replacement on next successful next call."
+ },
+ "e229": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers open() initialization only, with nothing on next loop, getOutput, false exhaustion or close."
+ },
+ "e244": {
+  "score": 1,
+  "supported": true,
+  "note": "Identifies next() returning false as exhaustion signal but omits close and the open/next/getOutput protocol."
+ },
+ "e259": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains page loaded once then served from memory but never gives fixed disk latency or block amortization rationale."
+ },
+ "e274": {
+  "score": 0,
+  "supported": false,
+  "note": "Claims length marks where data ends in parsing, contradicting source that length is unused in text deserialization, and omits type tag."
+ },
+ "e289": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains stop-the-world blocking but omits collisions and probe lengths and why rehashing is needed."
+ },
+ "e304": {
+  "score": 0,
+  "supported": false,
+  "note": "Claims sources do not cover next() calls down and tuples up and talks about SIMD gather-scatter, missing the iterator model."
+ },
+ "e319": {
+  "score": 0,
+  "supported": false,
+  "note": "Does not answer about runtime field collections and variable columns, and discusses persistence instead."
+ },
+ "e334": {
+  "score": 0,
+  "supported": false,
+  "note": "Gives generic fixed-width allocation answer and says sources lack it, missing frame-of-reference and bit-packing."
+ },
+ "e349": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly names the type tag but omits the byte-length role."
+ },
+ "e005": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers with range-query linear index scan, not recording qualifying offsets and fetching aggregates by page."
+ },
+ "e020": {
+  "score": 2,
+  "supported": true,
+  "note": "Names type and data length (plus value), matching both criteria."
+ },
+ "e035": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains serialization changes behind a stable Page interface with Tuple/Field logical objects."
+ },
+ "e050": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortized call overhead, tight loops/locality, and SIMD."
+ },
+ "e065": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct that first results wait, but omits materializing/buffering intermediates and I/O/memory contrast."
+ },
+ "e080": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains cheap ownership transfer but omits the moved-from state and replacement on next call."
+ },
+ "e095": {
+  "score": 1,
+  "supported": true,
+  "note": "Header and tuple overhead covered, but omits that leftover fragment smaller than a record is unusable."
+ },
+ "e110": {
+  "score": 0,
+  "supported": false,
+  "note": "Names flexible data model instead of the application using logical Page/Tuple/Field behind a stable interface."
+ },
+ "e125": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct that whole page is fetched but omits fixed latency and amortization over nearby accesses."
+ },
+ "e140": {
+  "score": 0,
+  "supported": false,
+  "note": "Describes columnar offset map, not filter streaming versus sort needing all input."
+ },
+ "e155": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers data independence rather than the open/next/close iterator interface."
+ },
+ "e170": {
+  "score": 1,
+  "supported": true,
+  "note": "Same probe sequence required and mismatch bug noted, but empty-slot early stop is not explained."
+ },
+ "e185": {
+  "score": 1,
+  "supported": true,
+  "note": "First value plus deltas correct, but cumulative-addition recovery and compact encoding not addressed."
+ },
+ "e200": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains bit-packing correctly but omits minimum subtraction (frame of reference) and restore step."
+ },
+ "e215": {
+  "score": 0,
+  "supported": false,
+  "note": "Talks about table scans and column stores, not next() calls recursing from root to children."
+ },
+ "e230": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains empty versus tombstone with lookup continuing and probe chain preserved."
+ },
+ "e245": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly describes pageOffsetMap of page and offsets and later fetch without rebuilding rows."
+ },
+ "e260": {
+  "score": 0,
+  "supported": false,
+  "note": "Declines; sources lack extendible hashing content and answer misses local versus global depth."
+ },
+ "e275": {
+  "score": 0,
+  "supported": false,
+  "note": "Says sources do not address it and gives irrelevant slot-skipping; core answer missing."
+ },
+ "e290": {
+  "score": 1,
+  "supported": true,
+  "note": "Says lookup follows same probe sequence, but omits the linear-versus-quadratic mismatch consequence."
+ },
+ "e305": {
+  "score": 2,
+  "supported": true,
+  "note": "Shared readers and exclusive writers waiting for all holders, correct."
+ },
+ "e320": {
+  "score": 0,
+  "supported": false,
+  "note": "Discusses per-tuple disk I/O cost instead of readability versus parsing/space cost of text."
+ },
+ "e335": {
+  "score": 1,
+  "supported": true,
+  "note": "Describes delta encoding but not recovery by cumulative addition or compact encoding."
+ },
+ "e350": {
+  "score": 2,
+  "supported": true,
+  "note": "Correct shared read mode and exclusive write mode."
+ },
+ "e006": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly states shared read mode and exclusive write waiting for all holders."
+ },
+ "e021": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers simplicity and parsing cost but generalizes that text always uses more space, ignoring the source's 42 example where text is smaller."
+ },
+ "e036": {
+  "score": 1,
+  "supported": true,
+  "note": "Empty slots skipped is correct but the end-of-scan currentTuple null criterion is not addressed."
+ },
+ "e051": {
+  "score": 2,
+  "supported": true,
+  "note": "Matches the empty versus tombstone behavior for lookup and insertion."
+ },
+ "e066": {
+  "score": 0,
+  "supported": false,
+  "note": "Only describes the used_size check and never mentions header/tuple overhead or unusable fragments."
+ },
+ "e081": {
+  "score": 0,
+  "supported": false,
+  "note": "Refuses and discusses pages; the supplied sources lack lock content and the criteria are unmet."
+ },
+ "e096": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains next() returning false at exhaustion but not empty-slot skipping or currentTuple reset."
+ },
+ "e111": {
+  "score": 0,
+  "supported": true,
+  "note": "Claims the source does not say how the count is written in binary, though Chunk 534 says a 4-byte integer, and the criteria tradeoffs are not covered."
+ },
+ "e126": {
+  "score": 0,
+  "supported": true,
+  "note": "Does not discuss filter versus blocking sort; Chunk 681 had the needed content."
+ },
+ "e141": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly gives a 4-byte binary integer but does not address the readability versus cost tradeoff criteria."
+ },
+ "e156": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct on the filter requesting more tuples from its child but omits the root-driven recursive next calls."
+ },
+ "e171": {
+  "score": 0,
+  "supported": false,
+  "note": "Says sources do not cover it and gives no move-ownership explanation; sources lack that content."
+ },
+ "e186": {
+  "score": 0,
+  "supported": false,
+  "note": "Does not address hash order lack or range scanning, and discusses collisions instead."
+ },
+ "e201": {
+  "score": 0,
+  "supported": false,
+  "note": "Declines to answer and never states that hash order is not preserved so ranges need scanning."
+ },
+ "e216": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains broken probe chains but does not clearly state empty terminates lookup or tombstone insertion reuse."
+ },
+ "e231": {
+  "score": 1,
+  "supported": true,
+  "note": "Same probe sequence is right but it wrongly says lookup passes over empty slots, contradicting that empty stops lookup."
+ },
+ "e246": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers collisions and probe lengths but omits rehashing on capacity change."
+ },
+ "e261": {
+  "score": 2,
+  "supported": true,
+  "note": "Correct page counts 7,813 versus 1,954 showing columns read only needed columns."
+ },
+ "e276": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct deferred dirty-page write-back but does not cover fixed latency or amortization criteria."
+ },
+ "e291": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains root pulling via next down the tree but not upward flow or filter repeated requests."
+ },
+ "e306": {
+  "score": 0,
+  "supported": false,
+  "note": "Talks about hashing and locking instead of disk latency and page amortization."
+ },
+ "e321": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains typed Field and moving from compile-time structs but not variable column count or no-recompile."
+ },
+ "e336": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers with vectorized CPU batching, not disk block latency and page amortization."
+ },
+ "e351": {
+  "score": 0,
+  "supported": false,
+  "note": "Describes linear hashing Next instead of extendible hashing local versus global depth rules."
+ },
+ "e007": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains shared read mode for multiple readers and exclusive write mode, matching both criteria."
+ },
+ "e022": {
+  "score": 0,
+  "supported": false,
+  "note": "Answer discusses disk I/O, not empty slots vs tombstones in probe chains; sources lack tombstone content."
+ },
+ "e037": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers the length question but addresses neither frozen criterion about text readability vs CPU/space tradeoff."
+ },
+ "e052": {
+  "score": 2,
+  "supported": true,
+  "note": "Identifies type and length alongside the value, matching both criteria."
+ },
+ "e067": {
+  "score": 1,
+  "supported": true,
+  "note": "Records page/offset positions correctly but is vague on fetching by page without reconstructing tuples."
+ },
+ "e082": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly describes append to every column file and write amplification being bad for small transactional writes."
+ },
+ "e097": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains stable interface with serialization changing behind it and apps using logical Tuple/Field objects."
+ },
+ "e112": {
+  "score": 2,
+  "supported": true,
+  "note": "States unordered hash index, so range requires iterating all slots; ordered index alternative not named but core met."
+ },
+ "e127": {
+  "score": 0,
+  "supported": false,
+  "note": "Answer talks about buffer manager page loading, not filter streaming vs blocking sort."
+ },
+ "e142": {
+  "score": 0,
+  "supported": false,
+  "note": "Discusses hash function quality and B+ trees, not load-driven probe growth or rehashing on resize; rehash content not in sources."
+ },
+ "e157": {
+  "score": 0,
+  "supported": false,
+  "note": "Talks about column I/O reduction, not batch amortization or contiguous-array locality; explicitly admits not covered."
+ },
+ "e172": {
+  "score": 1,
+  "supported": true,
+  "note": "Identifies data_length as the length mechanism but omits the type tag criterion."
+ },
+ "e187": {
+  "score": 1,
+  "supported": true,
+  "note": "Mentions unspecified overhead but not metadata specifics or unusable leftover fragment, and misframes holes as the answer."
+ },
+ "e202": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers clustering raising probe lengths but misses that changing capacity forces rehashing of all entries."
+ },
+ "e217": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers about late materialization rather than open/next/getOutput iterator protocol."
+ },
+ "e232": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains exclusive write lock to prevent corruption and that readers do not conflict."
+ },
+ "e247": {
+  "score": 2,
+  "supported": true,
+  "note": "Correct 9 bytes vs 4 bytes and tradeoff of readability vs space/parsing cost."
+ },
+ "e262": {
+  "score": 0,
+  "supported": false,
+  "note": "Does not describe frame-of-reference subtraction and bit-packing; sources for this question lack that content."
+ },
+ "e277": {
+  "score": 1,
+  "supported": true,
+  "note": "Notes text count read needs replacing by binary read but does not state fixed-width count nor tradeoff criteria well."
+ },
+ "e292": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly states append to every column file and write amplification unsuited to small transactional writes."
+ },
+ "e307": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains minimum subtraction producing small offsets then bit-packing with fewer bits."
+ },
+ "e322": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains rows drag unneeded columns while column store reads only the two needed column files."
+ },
+ "e337": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly contrasts row store reading all columns vs column store reading only two columns."
+ },
+ "e352": {
+  "score": 2,
+  "supported": true,
+  "note": "Confirms shared read mode for multiple readers and exclusive write mode for writers."
+ },
+ "e008": {
+  "score": 0,
+  "supported": false,
+  "note": "Says sources lack the topic and gives an irrelevant slot-skipping detail, never stating insertion and lookup must share a probe sequence."
+ },
+ "e023": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains cheap ownership transfer via move but omits the moved-from state and overwrite on next call."
+ },
+ "e038": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers collisions and longer probes but not rehashing or reinsertion on capacity change."
+ },
+ "e053": {
+  "score": 2,
+  "supported": true,
+  "note": "States a value is appended to every column file and that write amplification hurts small transactional writes."
+ },
+ "e068": {
+  "score": 2,
+  "supported": true,
+  "note": "Describes base timestamp plus deltas and cumulative addition to recover values."
+ },
+ "e083": {
+  "score": 0,
+  "supported": true,
+  "note": "Does not address write amplification or insert cost and does not engage the question's premise."
+ },
+ "e098": {
+  "score": 1,
+  "supported": true,
+  "note": "Describes pull model and select/project handling hypothetically but omits root next recursion and the filter pulling multiple child tuples."
+ },
+ "e113": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortized overhead, tight loops over contiguous arrays, locality and SIMD."
+ },
+ "e128": {
+  "score": 2,
+  "supported": true,
+  "note": "Identifies application code using logical Tuple/Field objects behind the stable Page abstraction."
+ },
+ "e143": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains fixed disk latency, block reads, amortization and page-based in-memory reuse."
+ },
+ "e158": {
+  "score": 1,
+  "supported": true,
+  "note": "States same probe sequence needed but gives no linear-versus-quadratic mismatch or empty-slot early stop."
+ },
+ "e173": {
+  "score": 2,
+  "supported": true,
+  "note": "Describes subtracting the minimum to get small offsets and bit-packing with minimal bits, though restoration is not spelled out."
+ },
+ "e188": {
+  "score": 2,
+  "supported": true,
+  "note": "Identifies same-path requirement and quadratic insert versus linear lookup mismatch causing lookup failure."
+ },
+ "e203": {
+  "score": 2,
+  "supported": true,
+  "note": "States identical strategy needed and shows quadratic insert versus linear lookup failing."
+ },
+ "e218": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains the function works on logical Tuple/Field objects regardless of storage format behind the Page abstraction."
+ },
+ "e233": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains unusable fragment smaller than a tuple but omits header and tuple metadata consuming space."
+ },
+ "e248": {
+  "score": 1,
+  "supported": true,
+  "note": "Says point lookups are fast and ranges are weak but gives no reason (no key ordering) or scan requirement."
+ },
+ "e263": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers about page loading rather than the executor calling next down from the root and data flowing up."
+ },
+ "e278": {
+  "score": 0,
+  "supported": false,
+  "note": "Describes linear range scan of a hash table rather than recording qualifying positions and fetching aggregates by page."
+ },
+ "e293": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains rows drag unneeded columns while column store reads only the two needed files."
+ },
+ "e308": {
+  "score": 1,
+  "supported": true,
+  "note": "Mentions shared read and exclusive write locks but not that multiple readers share or that writers wait."
+ },
+ "e323": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly says no tuple is reconstructed and only positional information passes between filter and aggregate stages."
+ },
+ "e338": {
+  "score": 0,
+  "supported": true,
+  "note": "Describes basic hash computation instead of local versus global depth splitting and directory doubling."
+ },
+ "e353": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains bit-packing into minimal bits with the 5 and 9 example but omits minimum subtraction and restoration."
+ },
+ "e009": {
+  "score": 0,
+  "supported": false,
+  "note": "Answer says sources do not address it and never states the move/moved-from semantics; the needed chunk was not supplied."
+ },
+ "e024": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers cheap ownership transfer but omits the moved-from state and that next() replaces currentTuple."
+ },
+ "e039": {
+  "score": 0,
+  "supported": false,
+  "note": "Vague generic answer that never mentions skipping empty slots or currentTuple being reset; supplied sources lack the scan-end passage."
+ },
+ "e054": {
+  "score": 1,
+  "supported": false,
+  "note": "Notes row storage reads whole rows and column storage would read only needed columns, but hedges and gives no page comparison; sources lack column-store content."
+ },
+ "e069": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly contrasts empty (lookup stops, insert reuses) with tombstone (lookup continues, insert reuses)."
+ },
+ "e084": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains physical data independence with stable Page/Tuple/Field interface and changeable serialization."
+ },
+ "e099": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly contrasts non-blocking filter with blocking sort that must see all input and buffer or spill."
+ },
+ "e114": {
+  "score": 1,
+  "supported": true,
+  "note": "Identifies the type tag but omits the byte length criterion."
+ },
+ "e129": {
+  "score": 1,
+  "supported": true,
+  "note": "Says hash sacrifices order and B+ trees suit ranges, but hedges that the passage does not compare and never states a range needs scanning."
+ },
+ "e144": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortized call overhead plus tight loops, locality and SIMD."
+ },
+ "e159": {
+  "score": 0,
+  "supported": true,
+  "note": "Describes the vector-of-Field structure and never addresses the stable logical interface over changing storage."
+ },
+ "e174": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says store the first timestamp and deltas, but omits cumulative-addition recovery and compact encoding of deltas."
+ },
+ "e189": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers readability and debuggability versus space and parsing cost with the correct 42 and 123456789 examples."
+ },
+ "e204": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains root next() pulling recursively from children but not data moving up through filter/projection or a filter pulling multiple child tuples."
+ },
+ "e219": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says length is written before the text (minor error calling it a 4-byte integer in the text format), but the trade-off criteria are not addressed."
+ },
+ "e234": {
+  "score": 0,
+  "supported": true,
+  "note": "Ends by saying to probe past empty slots, which contradicts the source (lookup stops at empty), and never mentions tombstones."
+ },
+ "e249": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes the blocking stop-the-world rebuild but not the collision/probe-length motivation or why entries must be rehashed."
+ },
+ "e264": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers open() initialization but not the next/getOutput loop, false meaning exhaustion, or close()."
+ },
+ "e279": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains physical data independence and the stable Page/Tuple/Field interface."
+ },
+ "e294": {
+  "score": 2,
+  "supported": true,
+  "note": "Correct 9 bytes versus 4 bytes, and the readability versus space and parsing trade-off."
+ },
+ "e309": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains sort as a blocking operator that materializes its input, breaking the pipeline."
+ },
+ "e324": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers about late materialization offsets rather than a sort buffering all input before emitting."
+ },
+ "e339": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains the local < global depth easy split but omits the equal-depth directory doubling case."
+ },
+ "e354": {
+  "score": 0,
+  "supported": false,
+  "note": "Discusses column vs row I/O instead of batch overhead amortization, cache locality and SIMD; the supporting chunk was not supplied."
+ },
+ "e010": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains empty stops lookup/breaks chain and tombstone continues lookup while allowing insert reuse."
+ },
+ "e025": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers cheap ownership transfer but omits moved-from valid state and next() replacing the tuple."
+ },
+ "e040": {
+  "score": 0,
+  "supported": false,
+  "note": "Answer is about row vs column layout and never addresses open/next/getOutput/close; sources lack that content."
+ },
+ "e055": {
+  "score": 0,
+  "supported": false,
+  "note": "Refuses and discusses pages; sources lack materialization vs pipelining content."
+ },
+ "e070": {
+  "score": 2,
+  "supported": true,
+  "note": "States hash destroys locality and range requires checking every bucket; ordered index not mentioned but core met."
+ },
+ "e085": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says lookup must retrace insertion path and flags the mismatch, but does not explain the empty-slot early stop consequence."
+ },
+ "e100": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers 'No, not necessarily true' which contradicts the point that materialization delays first results; no materialization description given."
+ },
+ "e115": {
+  "score": 2,
+  "supported": true,
+  "note": "Describes subtract-minimum frame of reference and minimum-bit packing correctly; restoration step only implicit."
+ },
+ "e130": {
+  "score": 0,
+  "supported": false,
+  "note": "Refuses; needed runtime Field/Tuple flexibility content not in supplied sources and answer misses both criteria."
+ },
+ "e145": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct next/GetNext down and tuple up flow, but omits that a filter may pull multiple child tuples."
+ },
+ "e160": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly contrasts empty (lookup stops) with tombstone (continue probing) and probe-chain breakage."
+ },
+ "e175": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains whole-page fetch, OS block latency and buffering rationale, consistent with sources."
+ },
+ "e190": {
+  "score": 0,
+  "supported": false,
+  "note": "Discusses linear and extendible hashing instead of capacity-dependent placement requiring rehash; criteria not met."
+ },
+ "e205": {
+  "score": 1,
+  "supported": true,
+  "note": "Mentions doubling when local equals global depth but says 'less than or equal' for the split case, vague and partly wrong."
+ },
+ "e220": {
+  "score": 2,
+  "supported": true,
+  "note": "7,813 vs 1,954 pages with correct calculation matching the sources."
+ },
+ "e235": {
+  "score": 1,
+  "supported": false,
+  "note": "Says passages do not cover range queries and notes sorted-structure need, but omits full-scan explanation; sources lacked the range-query chunk."
+ },
+ "e250": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains base plus deltas and small differences but omits recovery by cumulative addition."
+ },
+ "e265": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers about iterator model inefficiency instead of columnar storage write cost; sources do not support criteria."
+ },
+ "e280": {
+  "score": 2,
+  "supported": true,
+  "note": "Conveys column read of only needed columns (1,954 pages) vs full scan 7,813 pages from the source example."
+ },
+ "e295": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains data_length for variable-length strings but omits the type tag criterion."
+ },
+ "e310": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains hardcoded struct needs rewriting but never says the runtime Field/Tuple design avoids it."
+ },
+ "e325": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers locality and SIMD but omits amortizing function-call overhead across the batch."
+ },
+ "e340": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says Select filters tuples from the scan, but omits recursive next() pull and looping for more child tuples."
+ },
+ "e355": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly states materialization buffers intermediate results and delays first output unlike pipelining."
+ },
+ "e011": {
+  "score": 1,
+  "supported": true,
+  "note": "Pipelining first-row benefit and blocking ops are covered, but it opens with 'No' and never states that materialization buffers whole intermediate results, and it drifts into late materialization."
+ },
+ "e026": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers fixed disk latency, OS/DBMS blocks, and amortizing via nearby reads served from memory."
+ },
+ "e041": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains stable Page/deserialize interface and unchanged logical Tuple/Field use by the application."
+ },
+ "e056": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains cheap ownership transfer but omits the moved-from state and replacement on next call."
+ },
+ "e071": {
+  "score": 1,
+  "supported": true,
+  "note": "Says empty slots are skipped but is vague and omits end-of-scan currentTuple reset signaling."
+ },
+ "e086": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says rejected tuple is discarded and child is called again, but omits root-driven recursive next and projection flow."
+ },
+ "e101": {
+  "score": 2,
+  "supported": true,
+  "note": "Runtime Field collection, polymorphic types, and move away from compile-time structs are all covered."
+ },
+ "e116": {
+  "score": 1,
+  "supported": true,
+  "note": "Base timestamp plus small deltas is right, but recovery by cumulative addition is not stated."
+ },
+ "e131": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers with DDL, catalog, and constraints rather than type tag and byte length."
+ },
+ "e146": {
+  "score": 1,
+  "supported": true,
+  "note": "Rehashing all entries because capacity changes placement is right, but collision/probe-length increase and blocking rebuild are not discussed."
+ },
+ "e161": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers locality of tight loops and SIMD but misses amortizing function-call overhead over a batch."
+ },
+ "e176": {
+  "score": 1,
+  "supported": true,
+  "note": "Rehashing reasoning is right, but collision/probe-length increase and blocking rebuild are not discussed."
+ },
+ "e191": {
+  "score": 0,
+  "supported": false,
+  "note": "Describes a hash-table 'key not found' print instead of the scan operator ending with currentTuple reset."
+ },
+ "e206": {
+  "score": 1,
+  "supported": true,
+  "note": "Rehashing reasoning is right, but collision/probe-length increase and blocking rebuild are not discussed."
+ },
+ "e221": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains empty slot breaking probe chain and tombstone semantics for lookup versus insert."
+ },
+ "e236": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly contrasts row pages carrying all columns with column store reading only filter and aggregate columns."
+ },
+ "e251": {
+  "score": 1,
+  "supported": true,
+  "note": "Frame-of-reference minimum subtraction and bit-packing are right, but restoring by unpacking and adding the minimum is not stated."
+ },
+ "e266": {
+  "score": 1,
+  "supported": true,
+  "note": "Describes batch staging and SIMD but omits amortized call overhead and contiguous-array locality."
+ },
+ "e281": {
+  "score": 0,
+  "supported": false,
+  "note": "Declines and answers about disk write latency instead of delta encoding of timestamps."
+ },
+ "e296": {
+  "score": 0,
+  "supported": true,
+  "note": "Talks about I/O-to-CPU bottleneck shift rather than runtime Field collections and no recompilation."
+ },
+ "e311": {
+  "score": 2,
+  "supported": true,
+  "note": "Accurately describes pageOffsetMap recording page/offset positions and deferred fetch of aggregate values."
+ },
+ "e326": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly states an insert appends to every column file, causing write amplification unfavorable for small transactional writes."
+ },
+ "e341": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes dirty pages written back later, but does not tie to fixed disk latency or serving later accesses from memory."
+ },
+ "e356": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly explains row scan reading all columns versus column store reading only the two needed columns."
+ },
+ "e012": {
+  "score": 2,
+  "supported": true,
+  "note": "Stores first timestamp plus deltas and recovers by cumulative addition, noting deltas are small."
+ },
+ "e027": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers with I/O, compression and SIMD, never mentioning recording filter positions and fetching aggregate values late."
+ },
+ "e042": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains page already in memory so later accesses are fast, but omits fixed disk latency and block amortization."
+ },
+ "e057": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says filter discards and re-calls next on child, but omits root-driven recursive pull and upward flow."
+ },
+ "e072": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly says runtime vector of Field objects allows varying columns and types without recompiling."
+ },
+ "e087": {
+  "score": 0,
+  "supported": false,
+  "note": "Never mentions std::move, ownership transfer or moved-from state; the needed chunk was not supplied."
+ },
+ "e102": {
+  "score": 0,
+  "supported": true,
+  "note": "Describes hash table resizing and rehashing instead of extendible hashing directory doubling and local/global depth."
+ },
+ "e117": {
+  "score": 1,
+  "supported": true,
+  "note": "Gives data_length correctly but omits the type tag criterion."
+ },
+ "e132": {
+  "score": 0,
+  "supported": false,
+  "note": "Refuses and discusses an irrelevant hash simulator; the needed scan-end content was not in the sources."
+ },
+ "e147": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers header and tuple metadata overhead but omits unusable leftover fragment."
+ },
+ "e162": {
+  "score": 2,
+  "supported": true,
+  "note": "Frame of reference subtract-min plus bit-packing to needed bits, matching sources; restore step only implicit."
+ },
+ "e177": {
+  "score": 1,
+  "supported": true,
+  "note": "Gives length for variable-size data but omits the type tag and adds loosely relevant schema and page-offset material."
+ },
+ "e192": {
+  "score": 1,
+  "supported": true,
+  "note": "Says next returns false at end, but omits skipping empty slots and the reset of currentTuple."
+ },
+ "e207": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly explains column-file write amplification, but muddles the one-file side with tuple-by-tuple disk writes."
+ },
+ "e222": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains cheap ownership transfer well but omits the moved-from state and replacement on next call."
+ },
+ "e237": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes the local<global easy split but omits the equal-depth directory doubling case."
+ },
+ "e252": {
+  "score": 0,
+  "supported": true,
+  "note": "Talks about full-table failure and admits not covering probe-length degradation or rehashing on capacity change."
+ },
+ "e267": {
+  "score": 1,
+  "supported": true,
+  "note": "Contrasts point vs range queries and B+ tree suitability but never explains hashing destroys key order."
+ },
+ "e282": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly names ORDER BY sort as blocking, but does not contrast with filter streaming each tuple."
+ },
+ "e297": {
+  "score": 0,
+  "supported": false,
+  "note": "Misreads the question as page size versus tuple size and ignores local versus global depth."
+ },
+ "e312": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains physical data independence and the Page/Tuple/Field abstraction barrier staying stable."
+ },
+ "e327": {
+  "score": 1,
+  "supported": true,
+  "note": "Concludes sorting forces waiting for all input, but wrongly claims sources do not describe the sort operator and skips buffering detail."
+ },
+ "e342": {
+  "score": 2,
+  "supported": true,
+  "note": "Base timestamp plus deltas, recovered by cumulative addition with a clear worked example."
+ },
+ "e357": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains falling through to next page after scanning empty slots, but omits end-of-table reset of currentTuple."
+ },
+ "e013": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly recommends row-oriented OLTP but never mentions the column-store write amplification (one insert touching every column file) that the criteria require."
+ },
+ "e028": {
+  "score": 2,
+  "supported": true,
+  "note": "Contrasts non-blocking selection with blocking sort that must see all input and buffer or spill before emitting."
+ },
+ "e043": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says to store the first timestamp in full plus deltas, but does not describe cumulative-addition recovery or compact encoding of deltas."
+ },
+ "e058": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers amortized call overhead across a batch, locality of tight loops, and SIMD."
+ },
+ "e073": {
+  "score": 2,
+  "supported": true,
+  "note": "Explains high fixed I/O cost, block-based hardware/OS, and amortizing over a whole page loaded into memory."
+ },
+ "e088": {
+  "score": 0,
+  "supported": false,
+  "note": "Does not address materialization versus pipelining for aggregates and instead discusses delta-encoded scanning, which is off-target."
+ },
+ "e103": {
+  "score": 1,
+  "supported": true,
+  "note": "Mentions avoiding tuple reconstruction but gives compression and SIMD reasons rather than recording positions and fetching aggregate values by position."
+ },
+ "e118": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains the leftover is unusable internal fragmentation, but omits header and tuple metadata consuming space."
+ },
+ "e133": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains bit-packing with minimal bits but omits subtracting the minimum (frame of reference) and adding it back on unpack."
+ },
+ "e148": {
+  "score": 1,
+  "supported": true,
+  "note": "Identifies unusable internal fragmentation but does not mention page header or tuple metadata overhead."
+ },
+ "e163": {
+  "score": 1,
+  "supported": true,
+  "note": "Correct that whole page is loaded but does not explain the fixed disk latency or serving later nearby accesses from memory."
+ },
+ "e178": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly says no tuple is reconstructed and only positional information is passed between filter and aggregation stages."
+ },
+ "e193": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains tombstone accumulation lengthening probes, but not why an empty slot would break probe chains or that tombstones are reusable on insertion."
+ },
+ "e208": {
+  "score": 1,
+  "supported": true,
+  "note": "Mentions contiguous arrays and cache use but not amortized call overhead or SIMD, and adds column-selective reading tangent."
+ },
+ "e223": {
+  "score": 1,
+  "supported": true,
+  "note": "Recommends row-oriented OLTP correctly but does not cover column-store insert write amplification."
+ },
+ "e238": {
+  "score": 1,
+  "supported": true,
+  "note": "Notes hash index sacrifices order and handles ranges poorly, but does not say it must scan every bucket or that an ordered index suits ranges."
+ },
+ "e253": {
+  "score": 0,
+  "supported": false,
+  "note": "Vague answer about monolithic design, missing the scan operator behavior of skipping empty slots and resetting currentTuple at end."
+ },
+ "e268": {
+  "score": 0,
+  "supported": true,
+  "note": "Claims the sources do not detail the readability trade-off when the supplied passage states clarity and debuggability versus space and parsing cost."
+ },
+ "e283": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers the length question but neither criterion about text readability versus parsing and space cost is addressed."
+ },
+ "e298": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers about Field type checking, entirely missing the extendible hashing local versus global depth logic."
+ },
+ "e313": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly picks B+ tree as ordered and linked, versus hash needing extraction and external sort."
+ },
+ "e328": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly describes shared read mode versus exclusive write that waits for all holders."
+ },
+ "e343": {
+  "score": 1,
+  "supported": true,
+  "note": "Notes rehashing every key when size changes and collision degradation, but is muddled and does not mention the blocking rebuild."
+ },
+ "e358": {
+  "score": 0,
+  "supported": false,
+  "note": "Does not say lookups slow as occupancy rises via collisions and probe length and instead hedges that sources do not detail it."
+ },
+ "e014": {
+  "score": 2,
+  "supported": true,
+  "note": "Covers shared read mode for multiple readers and exclusive write waiting for all holders."
+ },
+ "e029": {
+  "score": 0,
+  "supported": true,
+  "note": "Answers with I/O block buffering and never mentions amortized dispatch overhead, tight loops, or SIMD."
+ },
+ "e044": {
+  "score": 0,
+  "supported": true,
+  "note": "Discusses compression and vectorization, not recording qualifying positions and fetching aggregate values by page."
+ },
+ "e059": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers page header and tuple metadata overhead but omits unusable leftover fragment."
+ },
+ "e074": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains the type tag but omits data_length as the size identifier for variable-length strings."
+ },
+ "e089": {
+  "score": 0,
+  "supported": false,
+  "note": "Talks about materialization vs pipelining generally and misses that sort must see all input while filter streams per tuple."
+ },
+ "e104": {
+  "score": 1,
+  "supported": true,
+  "note": "Describes base plus deltas with example but does not state cumulative-addition recovery or compact encoding."
+ },
+ "e119": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly picks B+ tree for ordered output because hash lacks order and needs external sort."
+ },
+ "e134": {
+  "score": 2,
+  "supported": true,
+  "note": "Shared read mode for many readers and exclusive write waiting for all holders, as in the source."
+ },
+ "e149": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly describes dirty pages written back later in one operation but does not explain fixed I/O latency amortization."
+ },
+ "e164": {
+  "score": 0,
+  "supported": false,
+  "note": "Answers with full table scan instead of blocking operators such as sort versus streaming filter."
+ },
+ "e179": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains mixed types via polymorphic Field pointers but does not clearly state variable column count or no-recompile benefit."
+ },
+ "e194": {
+  "score": 2,
+  "supported": true,
+  "note": "States lookup must retrace same probe path and that linear lookup fails on quadratically placed keys."
+ },
+ "e209": {
+  "score": 1,
+  "supported": true,
+  "note": "Describes pageOffsetMap and phase 2 use but omits fetching by page without reconstructing tuples."
+ },
+ "e224": {
+  "score": 1,
+  "supported": true,
+  "note": "Correctly says base must be stored but does not describe cumulative-addition recovery or compact encoding."
+ },
+ "e239": {
+  "score": 0,
+  "supported": false,
+  "note": "Does not address that insertion and lookup must use the same probe sequence and drifts to page loading."
+ },
+ "e254": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains stop-the-world blocking but not why growth requires rehashing due to changed placement and collisions."
+ },
+ "e269": {
+  "score": 0,
+  "supported": false,
+  "note": "Says sources do not cover it and gives nothing about local versus global depth."
+ },
+ "e284": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains the fit check against used_size but omits header or tuple overhead and gives only an implicit leftover-space point."
+ },
+ "e299": {
+  "score": 1,
+  "supported": true,
+  "note": "Covers root calling next down the tree and data pulled up but not a filter requesting multiple child tuples."
+ },
+ "e314": {
+  "score": 1,
+  "supported": true,
+  "note": "Explains header reduces usable space but omits unusable leftover fragment."
+ },
+ "e329": {
+  "score": 2,
+  "supported": true,
+  "note": "Correctly identifies sort as a blocking operator buffering all input before emitting."
+ },
+ "e344": {
+  "score": 1,
+  "supported": true,
+  "note": "Says hash index is inefficient for ranges but is vague on scanning every bucket and lack of order."
+ },
+ "e359": {
+  "score": 0,
+  "supported": true,
+  "note": "Answer does not address row insert requiring writes to every column file and misapplies row layout to a one-column query."
+ }
+}
